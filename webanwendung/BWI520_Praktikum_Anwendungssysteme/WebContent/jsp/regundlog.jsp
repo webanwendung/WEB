@@ -8,7 +8,9 @@
 </head>
 
 </head><link href='../css/logUndReg.css' rel='stylesheet' type='text/css'>
-<body>
+<body class="reglog">
+
+<form action="./LogUndRegAppl.jsp" method="get">
 
 <div class="login-wrap">
 	<div class="login-html">
@@ -18,18 +20,18 @@
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<input name="userlogin" type="text" value="" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Passwort</label>
-					<input id="pass" type="password" class="input" data-type="passwort">
+					<input name="passlogin" type="password" class="input" value="" data-type="passwort">
 				</div>
 				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
+					<input name="check" type="checkbox" class="check" checked>
 					<label for="check"><span class="icon"></span> Angemeldet bleiben</label>
 				</div>
 				<div class="group">
-					<input type="submit" class="button" value="Log In">
+					<input class="button" type="submit"   name="login" value="Log In">
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
@@ -39,19 +41,19 @@
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+					<input name="userreg" type="text" value="" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Email Addresse</label>
-					<input id="pass" type="text" class="input">
+					<input name="email" type="text" value="" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Passwort</label>
-					<input id="pass" type="password" class="input" data-type="passwort">
+					<input name="pass1" type="password" class="input" value="" >
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Passwort wiederholen</label>
-					<input id="pass" type="password" class="input" data-type="passwort">
+					<input name="pass2" type="password" class="input" value="" >
 				</div>
 				
 				 <label>	
@@ -61,7 +63,7 @@
 			
 				
 				<div class="group">
-					<input type="submit" class="button" value="Registrieren">
+					<input type="submit"  name="register" value="Registrieren" class="button">
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
@@ -70,7 +72,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div></form>
 
 </body>
 </html>

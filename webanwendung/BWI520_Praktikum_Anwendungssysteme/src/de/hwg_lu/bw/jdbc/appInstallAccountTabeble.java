@@ -29,7 +29,7 @@ public class appInstallAccountTabeble {
 	public void doSomething() throws SQLException, ClassNotFoundException{
 //		dropAccountTable();
 //		createAccountTable();
-////		insertFirstAccount();
+//		insertFirstAccount();
 //		insertSecondAccountStatisch();
 //		insertThirdAccountFromVariables();
 //		insertFourthAccountFromVariablesRetro();
@@ -146,7 +146,7 @@ public class appInstallAccountTabeble {
 	
 	public void createAccountTable() throws SQLException {
 		String sql = "CREATE TABLE account ("
-				+ "			userid   CHAR(16)     NOT NULL PRIMARY KEY,"
+				+ "			userid   CHAR(56)     NOT NULL PRIMARY KEY,"
 				+ "			password CHAR(32)     NOT NULL            ,"
 				+ "			active   CHAR(1)      NOT NULL DEFAULT 'Y',"
 				+ "			admin    CHAR(1)      NOT NULL DEFAULT 'N',"
@@ -201,7 +201,7 @@ public class appInstallAccountTabeble {
 	}
 	public void createAccountTable1() throws SQLException{
 		String sql = "create table bw440_654321.account                ("
-				+ "				userid   CHAR(16) NOT NULL PRIMARY KEY,"
+				+ "				userid   CHAR(56) NOT NULL PRIMARY KEY,"
 				+ "				password CHAR(32) NOT NULL            ,"
 				+ "				active   CHAR(1)  NOT NULL DEFAULT 'Y',"
 				+ "				admin    CHAR(1)  NOT NULL DEFAULT 'N',"
