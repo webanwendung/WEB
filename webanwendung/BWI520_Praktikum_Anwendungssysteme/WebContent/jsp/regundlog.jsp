@@ -28,7 +28,7 @@
 				</div>
 				<div class="group">
 					<input name="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Angemeldet bleiben</label>
+					<label for="check"><span class="icon"></span> Angemeldet bleiben?</label>
 				</div>
 				<div class="group">
 					<input class="button" type="submit"   name="login" value="Log In">
