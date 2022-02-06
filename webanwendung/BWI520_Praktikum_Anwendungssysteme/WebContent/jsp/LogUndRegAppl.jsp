@@ -82,7 +82,7 @@ else if (login.equals("Log In")){
 			//messageBean.setLoginSuccessful();
 			loginBean.setLoggedIn(true);
 			System.out.println(" versuch einzulogen erfolgreich");
-			response.sendRedirect("./willkommen.jsp");
+			response.sendRedirect("../html/navogation.html");
 		}else{
 		//	messageBean.setLoginFailed();
 			loginBean.setLoggedIn(false);

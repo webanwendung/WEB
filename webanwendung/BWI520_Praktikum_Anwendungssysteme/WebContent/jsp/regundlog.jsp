@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Anmeldung und Login</title>
-</head>
+
 
 </head><link href='../css/logUndReg.css' rel='stylesheet' type='text/css'>
 <body class="reglog">
