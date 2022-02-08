@@ -28,8 +28,26 @@
             </div>
  
         </div> 
-       
-        
+        <div class="content">
+         <form action="../jsp/willkommenAppl.jsp" method="get">
+				
+            <h1>Willkommen bei <br><span>STUDCOM</span> <br>Lernplatform</h1>
+            <p class="par">die Community von Studenten und für
+					Studenten <br> Hier erhältst du kostenlose Lernunterlagen und Antworten
+					für dein Studium.
+                <br> Studiere einfacher, schneller und besser.</p>
+
+                
+                <input class="cn" type="submit"  name="kurse" value="zu den Lernunterlagen" ><br><br>				
+					<input type="submit"  name="dok" value="Notizen hochladen" class="cn">				
+					<input type="submit"  name="forum" value="eine Frage im Forum stellen" class="cn"><br><br>
+					<input type="submit"  name="register" value="Tutor finden" class="cn">
+					<input type="submit"  name="register" value="Tutor werden" class="cn"><br><br>
+                
+               
+					
+					
+			</form>
                 
 <!-- 
                 <div class="form">
