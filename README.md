@@ -1,2 +1,2 @@
 # BWI520_Praktikum_Anwendungssysteme
-groupenarbeit zur projekt BWI520_Praktikum_Anwendungssysteme ziel ist es ein fonktionallen Webanwendung zu entwikeln, dass gut aussieht
+Groupenarbeit zur projekt BWI520_Praktikum_Anwendungssysteme. Ziel ist es ein fonktionallen Webanwendung zu entwikeln, dass gut aussieht und vollfonktiontüchtig ist.
