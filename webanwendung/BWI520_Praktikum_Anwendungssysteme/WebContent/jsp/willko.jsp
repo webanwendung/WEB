@@ -49,17 +49,15 @@
 					
 			</form>
                 
-<!-- 
+ 
                 <div class="form">
-                    <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="" placeholder="Enter Password Here">
-                    <button class="btnn"><a href="#">Login</a></button>
+                    <h2>Haben sie bereit einen Account?</h2>
+                    
+                    <button class="btnn"><a href="../jsp/regundlog.jsp">Login</a></button><br><br>
 
-                    <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
-                    <p class="liw">Log in with</p>
-
+                   <h2>Haben sie noch keinen Account?</h2> 
+                    <button class="btnn" class="sign-up-htm"><a href="../jsp/regundlog.jsp">Registrieren</a></button>
+<!--
                     <div class="icons">
                         <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
                         <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
@@ -73,7 +71,7 @@
                     </div>
                 </div>
         </div>
-    </div>
+    
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
