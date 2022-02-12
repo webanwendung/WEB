@@ -45,7 +45,7 @@ response.sendRedirect("../jsp/Chatview.jsp");
 }
 else if  (dok.equals("Notizen hochladen")){
 	System.out.println("notizenhochladen-Button wurde geklickt");
-response.sendRedirect("../jsp/upload.jsp");
+response.sendRedirect("../File Upload in JavaScript/index.html");
 	
 }
 else if  (forum.equals("eine Frage im Forum stellen")){

@@ -20,10 +20,29 @@ fileInput.onchange = ({target})=>{
   }
 }
 
+var xhr = new XMLHttpRequest();
+xhr.open("POST", '/server', true);
+
+//Send the proper header information along with the request
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+xhr.onreadystatechange = function() { // Call a function when the state changes.
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        // Request finished. Do processing here.
+    }
+}
+//xhr.send("foo=bar&lorem=ipsum");
+// xhr.send(new Int8Array());
+ xhr.send(document);
+
+
+
+ 
+
 // file upload function
 function uploadFile(name){
   let xhr = new XMLHttpRequest(); //creating new xhr object (AJAX)
-  xhr.open("POST", "php/upload.php"); //sending post request to the specified URL
+  xhr.open("POST", "./php/upload.php"); //sending post request to the specified URL
   xhr.upload.addEventListener("progress", ({loaded, total}) =>{ //file uploading progress event
     let fileLoaded = Math.floor((loaded / total) * 100);  //getting percentage of loaded file size
     let fileTotal = Math.floor(total / 1000); //gettting total file size in KB from bytes

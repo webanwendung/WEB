@@ -1,12 +1,16 @@
 package de.hwg_lu.bw4s.beansPruefung;
-
+ import de.hwg_lu.bw4s.beansPruefung.AccountBean;
+ import de.hwg_lu.bw4s.beansPruefung.LoginBean;
+ import java.sql.SQLException;
+ import de.hwg_lu.bw.jdbc.NoConnectionException;
+ 
 public class HtmlExpresion {
 
 	public HtmlExpresion() {
 		
 	}
 
-	public static String getNavigation() {
+	public  String getNavigation() {
 		String html = "";
 		html += "<div class=\"main\">";
 		html += "        <div class=\"navbar\">";
@@ -18,9 +22,9 @@ public class HtmlExpresion {
 		html += "                <ul>";
 		html += "                    <li><a href=\"../jsp/willko.jsp\">HOME</a></li>";
 		html += "                    <li><a href=\"#\">SERVICE</a></li>";
-		html += "                    <li><a href=\"#\">DOCUMENTATION</a></li>";
+		html += "                    <li><a href=\"../jsp/regundlog.jsp\">DOCUMENTATION</a></li>";
 		html += "                    <li><a href=\"../jsp/kontakt.jsp\">CONTACT</a></li>";
-		html += "                    <li><a href=\"#\">LOGOUT</a></li>";
+		html += "                    <li><a href=\"../jsp/regundlog.jsp\">LOGOUT</a></li>";
 		html += "                </ul>";
 		html += "            </div>";
 
@@ -30,9 +34,10 @@ public class HtmlExpresion {
 		html += "            </div>";
 
 		html += "        </div> ";
-		html += "        </div> ";
+		
 		return html;
 
 	}
+	
 
 }

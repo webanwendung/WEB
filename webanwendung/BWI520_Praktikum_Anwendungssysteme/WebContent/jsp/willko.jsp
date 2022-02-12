@@ -1,3 +1,9 @@
+
+<%@page import="de.hwg_lu.bw4s.beansPruefung.LoginBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.AccountBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +11,15 @@
     <link rel="stylesheet" href="../css/Navigation.css">
 </head>
 <body>
+<jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
+<jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
+<jsp:useBean id="htmlexprexion" class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
 
-    <div class="main">
+
+ <jsp:getProperty property="navigation" name="htmlexprexion"/>
+  
+  
+  <!--   <div class="main">
         <div class="navbar">
             <div class="icon">
                 <h2 class="logo">STUDCOM</h2>
@@ -27,7 +40,8 @@
                 <a href="#"> <button class="btn">Search</button></a>
             </div>
  
-        </div> 
+        </div> --> 
+        
         <div class="content">
          <form action="../jsp/willkommenAppl.jsp" method="get">
 				
@@ -49,8 +63,9 @@
 					
 			</form>
                 
+ <jsp:getProperty property="loginauftrag" name="loginBean"/>
  
-                <div class="form">
+                <!-- <div class="form">
                     <h2>Haben sie bereit einen Account?</h2>
                     
                     <button class="btnn"><a href="../jsp/regundlog.jsp">Login</a></button><br><br>
@@ -67,9 +82,9 @@
                     </div>
 
                 </div>
-                -->
+               
                     </div>
-                </div>
+                </div> -->
         </div>
     
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>

@@ -1,3 +1,6 @@
+<%@page import="de.hwg_lu.bw4s.beansPruefung.AccountBean"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,6 +12,8 @@
 
 </head><link href='../css/logUndReg.css' rel='stylesheet' type='text/css'>
 <body class="reglog">
+<jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
+<jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
 
 <form action="./LogUndRegAppl.jsp" method="get">
 
