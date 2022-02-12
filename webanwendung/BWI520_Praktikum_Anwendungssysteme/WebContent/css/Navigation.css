@@ -119,7 +119,18 @@ ul li a:hover{
     color: #fff;
     position: relative;
 }
+.content table{
+	border: 1px solid black;
+	border-radius: 5px; 
+	border-collapse: collapse;
+	color: #fff;
+}
 
+.content td{
+	border: 1px solid blue;
+	border-radius: 5px; 
+	padding: 3px;
+}
 .content .par{
     padding-left: 20px;
     padding-bottom: 25px;
@@ -208,6 +219,16 @@ ul li a:hover{
     margin-top: 30px;
     font-family: sans-serif;
 }
+.file h1{
+	color:#FF9F00;   /* Farbe orange */
+  font-size:28pt;  /* Größe 28pt   */
+	color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
 
 .form input:focus{
     outline: none;
