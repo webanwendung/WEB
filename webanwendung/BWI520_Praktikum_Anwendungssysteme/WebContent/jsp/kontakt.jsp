@@ -1,3 +1,8 @@
+<%@page import="de.hwg_lu.bw4s.beansPruefung.LoginBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.AccountBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,30 +12,12 @@
 <link rel="stylesheet" href="../css/Navigation.css">
 </head>
 <body>
+ <jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
+<jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
+<jsp:useBean id="htmlexprexion" class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
  
- <div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">STUDCOM</h2>
-            </div>
-
-            <div class="menu">
-                <ul>
-                    <li><a href="../jsp/willko.jsp">HOME</a></li>                    
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">DOCUMENTATION</a></li>
-                    <li><a href="../css/kontakt.css">CONTACT</a></li>
-                    <li><a href="#">LOGOUT</a></li>
-                </ul>
-            </div>
-
-            <div class="search">
-                <input class="srch" type="search" name="" placeholder="Type To text">
-                <a href="#"> <button class="btn">Search</button></a>
-            </div>
- 
-        </div> 
-
+ <jsp:getProperty property="navigation" name="htmlexprexion"/>
+  
 <div class="container">
 	<br>
 	<br>

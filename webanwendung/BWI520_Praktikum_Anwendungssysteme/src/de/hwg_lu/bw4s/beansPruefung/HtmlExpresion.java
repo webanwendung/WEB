@@ -22,7 +22,7 @@ public class HtmlExpresion {
 		html += "                <ul>";
 		html += "                    <li><a href=\"../jsp/willko.jsp\">HOME</a></li>";
 		html += "                    <li><a href=\"#\">SERVICE</a></li>";
-		html += "                    <li><a href=\"../jsp/regundlog.jsp\">DOCUMENTATION</a></li>";
+		html += "                    <li><a href=\"https://www.dropbox.com/sh/vsm2rp4llvb8gyh/AABBwGD2Aas9nveKbctkW4tea?dl=0\">DOCUMENTATION</a></li>";
 		html += "                    <li><a href=\"../jsp/kontakt.jsp\">CONTACT</a></li>";
 		html += "                    <li><a href=\"../jsp/regundlog.jsp\">LOGOUT</a></li>";
 		html += "                </ul>";

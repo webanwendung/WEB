@@ -1,37 +1,22 @@
+<%@page import="de.hwg_lu.bw4s.beansPruefung.LoginBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.AccountBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>fcher</title>
+<title>fächer</title>
 <link rel="stylesheet" href="../css/Navigation.css">
 <link href='../css/portailcss.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-    <div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">STUDCOM</h2>
-            </div>
-
-            <div class="menu">
-                <ul>
-                    <li><a href="#">HOME</a></li>                    
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">DOCUMENTATION</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                    <li><a href="#">LOGOUT</a></li>
-                </ul>
-            </div>
-
-            <div class="search">
-                <input class="srch" type="search" name="" placeholder="Type To text">
-                <a href="#"> <button class="btn">Search</button></a>
-            </div>
- 
-        </div> 
+    <jsp:getProperty property="navigation" name="htmlexprexion"/>
+   
         <div class="content">
          <hr>
          <br>

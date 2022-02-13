@@ -32,10 +32,12 @@ String password2 = request.getParameter("pass2");
 String username = request.getParameter("userreg");
 String email = request.getParameter("email");
 //String btnLogin = request.getParameter("login");
-//Buttons
 
+//Buttons
 String kurse = this.denullify(request.getParameter("kurse"));
 String dok = this.denullify(request.getParameter("dok"));
+String tuw = this.denullify(request.getParameter("tuw"));
+String tuf = this.denullify(request.getParameter("tuf"));
 String forum = this.denullify(request.getParameter("forum"));
 
 if (kurse.equals("zu den Lernunterlagen")){
@@ -45,7 +47,17 @@ response.sendRedirect("../jsp/Chatview.jsp");
 }
 else if  (dok.equals("Notizen hochladen")){
 	System.out.println("notizenhochladen-Button wurde geklickt");
-response.sendRedirect("../File Upload in JavaScript/index.html");
+response.sendRedirect("../File Upload in JavaScript/uploader.jsp");
+	
+}
+else if  (tuw.equals("Tutor werden")){
+	System.out.println("tutor werden-Button wurde geklickt");
+response.sendRedirect("../jsp/tutorWerden.jsp");
+	
+}
+else if  (tuf.equals("Tutor finden")){
+	System.out.println("tutor finden-Button wurde geklickt");
+response.sendRedirect("../jsp/tutorfinden.jsp");
 	
 }
 else if  (forum.equals("eine Frage im Forum stellen")){
@@ -53,7 +65,11 @@ else if  (forum.equals("eine Frage im Forum stellen")){
 response.sendRedirect("../forum/forums.html");
 	
 }
-
+else {
+	System.out.println("kein Button wurde geklickt");
+response.sendRedirect("../jsp/willko.jsp");
+	
+}
 
 
 %>

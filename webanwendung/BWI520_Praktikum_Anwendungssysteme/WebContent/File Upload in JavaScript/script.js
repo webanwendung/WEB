@@ -19,6 +19,27 @@ fileInput.onchange = ({target})=>{
     uploadFile(fileName); //calling uploadFile with passing file name as an argument
   }
 }
+//andere variante
+var path = "/test_javascript_upload.txt";
+var content = "data to upload";
+var accessToken = "<ACCESS_TOKEN>";
+var uploadUrl = "https://www.dropbox.com/home/Wirtschaftsinformatik/5.%20Semester/Webanwendungen_praktikum"
+var result;
+
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+        result = xhr.responseText;
+        console.log(result);
+    }
+};
+xhr.open("POST", uploadUrl, true);
+xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+xhr.setRequestHeader("Content-type", "application/octet-stream");
+xhr.setRequestHeader("Dropbox-API-Arg", '{"path": "' + path + '"}');
+xhr.send(content);
+
+//andere variante
 
 var xhr = new XMLHttpRequest();
 xhr.open("POST", '/server', true);
