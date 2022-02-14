@@ -297,16 +297,7 @@ ul li a:hover{
   overflow: hidden;
 }
 
-.dropdown .dropbtn {
-  font-size: 17px;    
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
+
 
 .dropdown-content {
   display: none;
@@ -351,10 +342,4 @@ ul li a:hover{
 }
 
 
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
+ 
