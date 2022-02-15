@@ -7,10 +7,15 @@ package de.hwg_lu.bw4s.beansPruefung;
 public class HtmlExpresion {
 
 	public HtmlExpresion() {
-		
+		LoginBean login = new LoginBean();
 	}
 
 	public  String getNavigation() {
+//		String log="Login";
+//		String id = login.getUserid();
+//		if (id!="nx") {
+//			log="Logout";
+//		}
 		String html = "";
 		html += "<div class=\"main\">";
 		html += "        <div class=\"navbar\">";
