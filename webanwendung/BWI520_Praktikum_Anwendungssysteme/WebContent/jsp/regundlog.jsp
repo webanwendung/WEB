@@ -57,7 +57,7 @@
 				</div>
 				
 				 <label>	
-		   		<input type="radio" name="geschlecht" value="M" /> männlich</label>
+		   		<input type="radio" name="geschlecht" value="M" /> m&auml;nnlich</label>
 				<label><input type="radio" name="geschlecht" value="w"   /> weiblich</label> 
 				<label><input type="radio" name="geschlecht" value="A" />anders</label><br><br>
 			
