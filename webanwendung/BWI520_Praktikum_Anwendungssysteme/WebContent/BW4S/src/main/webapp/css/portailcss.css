@@ -1,0 +1,275 @@
+/**, :after, :before {
+	box-sizing: border-box
+}*/
+
+.clearfix:after, .clearfix:before {
+	content: '';
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+	display: block
+}
+
+a {
+	color: inherit;
+	text-decoration: none
+}
+
+body {
+	/*background-color: rgb(58, 60, 61);*/
+	text-align: center;
+	/*font-size: 20px;
+	font-family: verdana;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 90px 70px 50px 70px;*/
+}
+
+/*.wrap {
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-width: 1500px;
+	min-height: 1418px;
+	position: absolute;;
+	background-size: contain;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0
+		rgba(0, 0, 0, .19);
+}*/
+/*.wrap-main {
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-width: 1500px;
+	min-height: 1418px;
+	position: relative;
+	background-image:inherit;
+	background-size: contain;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0
+		rgba(0, 0, 0, .19);
+}*/
+
+/*.html {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 90px 70px 50px 70px;
+}*/
+
+h1.f1 {
+	color: black;
+	font-family: verdana;
+}
+
+p {
+	font-family: verdana;
+	text-align: center;
+	font-size: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 18px 30px;
+  font-size: 44px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: blue;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  
+}
+.button {width: 60%;}
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+/*img{
+	width:300%;
+	height:100%;
+	border:ridge 3px white  ;
+	
+	
+}*/
+.tut{
+	color: #ff7200;
+	border: 5px inset #ff7200;
+	background-color:#fff;
+}
+img{
+	max-width:100%;
+	max-height:100%;
+}
+td{
+	height:100px;
+	width:100px;
+	text-align:center;
+}
+table
+{
+	margin:auto;
+	align-items:center;
+}
+table a img:hover{
+    color: #ff7200;
+    border: 5px solid #ff7200;
+    
+    
+}
+table a:hover{
+    color: #ff7200; 
+}
+ zoomin img:hover{
+	height:300px;
+    width:300px;
+}
+
+
+/*body {
+  background-color: #e9f2f5;
+  padding: 20px;
+  font-family: Arial;
+}*/
+ /* .main {
+    max-width: 1000px;
+    margin: auto;
+  }*/
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;  
+  }
+  
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 5px;
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+}
+ .fa-Betriebwirtschaft {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-Webanwendungen {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-SoftwareEngineering {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-Businessintelligence {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-Algorithmen {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-Datenbanken {
+    background: #125688;
+    color: white;
+  }
+  
+  .fa-ERPSysteme {
+    background: #cb2027;
+    color: white;
+  }
+  
+  .fa-Mathematik {
+    background: #fffc00;
+    color: white;
+  }
+  
+  .fa-Finanzierung {
+    background: #00aff0;
+    color: white;
+  }
+  
+  .fa-Statistik {
+    background: #a4c639;
+    color: white;
+  }
+  
+  .fa-Programmierung {
+    background: #ea4c89;
+    color: white;
+  }
+  
+  .fa-Englisch {
+    background: #45bbff;
+    color: white;
+  }
+  .fa-winfo {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-Bwl1 {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-Bwl2 {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-Logistik {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-Marketing {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-Ainfo {
+    background: #125688;
+    color: white;
+  }
+  
+  .fa-Info {
+    background: #cb2027;
+    color: white;
+  }
+  /*.recht {
+   text-align: right;
+  }
+  .links {
+   text-align: left;
+  }*/

@@ -9,6 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../css/kontakt.css">
+
 <link rel="stylesheet" href="../css/Navigation.css">
 </head>
 <body>
