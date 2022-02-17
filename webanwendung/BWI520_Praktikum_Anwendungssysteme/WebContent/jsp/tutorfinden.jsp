@@ -33,7 +33,7 @@
 	<!-- erste muster prifile -->
 
 	<!-- Add icon library -->
-
+<div class="container">
 	<table style="alignborder-left: center;">
 		<tr>
 			<td><div class="card">
@@ -139,7 +139,7 @@
 
 	</table>
 
-
+</div>
 
 
 

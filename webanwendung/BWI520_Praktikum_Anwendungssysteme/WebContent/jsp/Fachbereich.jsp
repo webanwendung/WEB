@@ -44,25 +44,25 @@
 	<table>
 		<tr>
 			<td><div class="polaroid">
-					<img src="../img2/wi.png" alt="Wirtschaftsinformatik">
+					<a href="../jsp/VorlesungenView.jsp"><img src="../img2/wi.png" alt="Wirtschaftsinformatik"></a>
 					<div class="container">
 						<p>Wirtschaftsinformatik</p>
 					</div>
 				</div></td>
 			<td><div class="polaroid">
-					<img src="../img2/bwl.png" alt="Betriebwirtschaftslehre">
+					<a href="../jsp/VorlesungenView.jsp"><img src="../img2/bwl.png" alt="Betriebwirtschaftslehre"></a>
 					<div class="container">
 						<p>Betriebwirtschaftslehre</p>
 					</div>
 				</div></td>
 			<td><div class="polaroid">
-					<img src="../img2/finanz.png" alt="Finanzwirtschaft">
+				<a href="../jsp/VorlesungenView.jsp">	<img src="../img2/finanz.png" alt="Finanzwirtschaft"></a>
 					<div class="container">
 						<p>Finanzwirtschaft</p>
 					</div>
 				</div></td>
 			<td><div class="polaroid">
-					<img src="../img/logistik.jpg" alt="Logistik">
+					<a href="../jsp/VorlesungenView.jsp"><img src="../img/logistik.jpg" alt="Logistik"></a>
 					<div class="container">
 						<p>Logistik</p>
 					</div>
@@ -70,25 +70,25 @@
 		</tr>
 		<tr>
 			<td><div class="polaroid">
-					<img src="../img/marketing.jpg" alt="Marketing">
+				<a href="../jsp/VorlesungenView.jsp">	<img src="../img/marketing.jpg" alt="Marketing"></a>
 					<div class="container">
 						<p>Marketing</p>
 					</div>
 				</div></td>
 			<td><div class="polaroid">
-					<img src="../img2/consolting.png" alt="Consulting">
+					<a href="../jsp/VorlesungenView.jsp"><img src="../img2/consolting.png" alt="Consulting"></a>
 					<div class="container">
 						<p>Consulting</p>
 					</div>
 				</div></td>
 			<td><div class="polaroid">
-					<img src="../img2/pflege.jpg" alt=" Pflegepädagogik">
+					<a href="../jsp/VorlesungenView.jsp"><img src="../img2/pflege.jpg" alt=" Pflegepädagogik"></a>
 					<div class="container">
 						<p>Pflegepädagogik</p>
 					</div>
 				</div></td>
 			<td><div class="polaroid">
-					<img src="../img2/projekt.jpg" alt="Projektmanagement">
+					<a href="../jsp/VorlesungenView.jsp"><img src="../img2/projekt.jpg" alt="Projektmanagement"></a>
 					<div class="container">
 						<p>Projektmanagement</p>
 					</div>

@@ -5,10 +5,13 @@ fach.body {
 
 div.polaroid {
   width: 8cm;
- border-radius: 16px;
+ border-radius: 20px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  /* margin-left: 10px; */
+  margin-right: 10px;
+  transition: width 2s, height 2s, transform 2s;
 }
 
 div.container {
@@ -16,6 +19,13 @@ div.container {
   padding: 10px 20px;
     font-size: 30px;
 }
+
+/* um die fläsche zu vergrössen */
+div.polaroid:hover {
+	transform: translateY(-3.5px) scale(1.05);
+}
+
+
 h1,h3,h2, p.intro, footer{
 	color:white ;
 	text-align: center;
@@ -34,6 +44,6 @@ table{
 img{
 	height: 6cm;
 	width: 100%;
-	border-radius:16px;
+	border-radius:20px;
 	/* opacity: 0.8; */
 }

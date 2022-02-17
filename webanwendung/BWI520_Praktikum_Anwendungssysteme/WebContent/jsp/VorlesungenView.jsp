@@ -45,7 +45,8 @@
 	<table>
 		<tr>
 			<td><div class="polaroid">
-					<img src="../img2/bwl.png" alt="ABWL">
+			
+					<a href="../html/abwlView.html"><img src="../img2/bwl.png" alt="ABWL"></a>
 					<div class="container">
 						<p>Betriebwirtschaft</p>
 					</div>
