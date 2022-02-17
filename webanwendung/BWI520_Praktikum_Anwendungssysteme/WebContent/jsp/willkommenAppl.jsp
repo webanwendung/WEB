@@ -42,7 +42,7 @@ String forum = this.denullify(request.getParameter("forum"));
 
 if (kurse.equals("zu den Lernunterlagen")){
 	System.out.println("kurse-Button wurde geklickt");
-response.sendRedirect("../jsp/Chatview.jsp");
+response.sendRedirect("../jsp/Fachbereich.jsp");
 	
 }
 else if  (dok.equals("Notizen hochladen")){

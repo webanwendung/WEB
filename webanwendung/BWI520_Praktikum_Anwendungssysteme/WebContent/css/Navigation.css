@@ -3,22 +3,22 @@
     padding: 0;
 
 }
-html{
+ html{
     background-image:  linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(../img/2.png);
     background-position: center;
    
     background-size: contain;
     height: 100vh;
-}
+} 
 
 
 .main{
    /*  width: 100%; */
     background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(../img/R2.jpg),url(../img/1.jpg);
     background-position: center;
-    background-repeat:no-repeat;
-    background-size: 108;
-    height: 100vh;
+    /* background-repeat:cover; */
+    background-size: contain cover;
+     height: 100vh;
 }
 
 .navbar{
@@ -129,18 +129,9 @@ ul li a:hover{
     color: #fff;
     position: relative;
 }
-.content table{
-	border: 1px solid black;
-	border-radius: 5px; 
-	border-collapse: collapse;
-	color: #fff;
-}
 
-.content td{
-	border: 1px solid blue;
-	border-radius: 5px; 
-	padding: 3px;
-}
+
+
 .content .par{
     padding-left: 20px;
     padding-bottom: 25px;

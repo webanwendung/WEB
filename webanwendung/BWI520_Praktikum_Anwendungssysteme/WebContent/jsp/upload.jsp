@@ -1,4 +1,9 @@
-
+<%@page import="de.hwg_lu.bw4s.beansPruefung.LoginBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.AccountBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.FileUploadHandler
+"%>
+<%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,44 +16,32 @@
 
 <link href='../css/Navigation.css' rel='stylesheet' type='text/css'>
 <jsp:useBean id="exprexion"   class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
+
 </head>
 <body>
+<jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
+  <jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
+  <jsp:useBean id="htmlexprexion" class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
+<jsp:useBean id="upload"   class="de.hwg_lu.bw4s.beansPruefung.FileUploadHandler" scope="session" />
+  <!-- navigation als html Exprexion abgerufen -->
+  <jsp:getProperty property="navigation" name="htmlexprexion" />
 
 
 
-<div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">STUDCOM</h2>
-            </div>
 
-            <div class="menu">
-                <ul>
-                    <li><a href="../jsp/willko.jsp">HOME</a></li>                    
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">DOCUMENTATION</a></li>
-                    <li><a href="../jsp/kontakt.jsp">CONTACT</a></li>
-                    <li><a href="#">LOGOUT</a></li>
-                </ul>
-            </div>
 
-            <div class="search">
-                <input class="srch" type="search" name="" placeholder="Type To text">
-                <a href="#"> <button class="btn">Search</button></a>
-            </div>
- 
-        </div>
+       
         <br>
         <br>
         <br>
         <br>
         <center class="content" >
 		<h1>Ein Document hochladen</h1>
-		<form action="FileUploadHandler.java" enctype="multipart/form-data" method="post">
+		<form action="" enctype="multipart/form-data" method="post">
 		<table>
   <tr>
     <th>Datei Name eingeben</th>
-    <th><input type="text" name="file_name"></th>
+    <td><input type="text" name="file_name"></td>
   </tr>
   <tr>
     <th></th>
@@ -64,14 +57,14 @@
 		</form>
 		<%
 		
-		String file_name = (String) request.getParameter("filename");
+		String file_name = (String) request.getParameter("file_name");
 		System.out.println(file_name);
 		if (file_name != null) {
-			out.println(file_name + " File uploaded successfuly");
+			System.out.println(file_name + " File uploaded successfuly");
 		}
 		%>
 	</center> 
-        </div> 
+       
 	
 </body>
 </html>

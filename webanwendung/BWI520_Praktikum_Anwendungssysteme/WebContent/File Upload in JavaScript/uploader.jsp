@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
-<body>
+<body class="main">
   <jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
   <jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
   <jsp:useBean id="htmlexprexion" class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
@@ -30,7 +30,7 @@
       <form action="./script.js" method="post">
         <input class="file-input" type="file" name="file" hidden>
         <i class="fas fa-cloud-upload-alt"></i>
-        <p>WÃ¤hlen Sie eine Datei aus</p>
+        <p>Wählen Sie eine Datei aus</p>
       </form>
       <section class="progress-area"></section>
       <section class="uploaded-area"></section>

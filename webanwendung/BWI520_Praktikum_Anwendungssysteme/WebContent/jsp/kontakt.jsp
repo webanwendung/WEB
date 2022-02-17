@@ -24,9 +24,8 @@
 	<br>
 	<br>
 	<br>
-	<br>
 	<div class="row">
-			<h4 style="text-align:center">We'd love to hear from you!</h4>
+			<h4 style="text-align:center">We'd like to hear from you!</h4>
 	</div>
 	<div class="row input-container">
 			<div class="col-xs-12">
