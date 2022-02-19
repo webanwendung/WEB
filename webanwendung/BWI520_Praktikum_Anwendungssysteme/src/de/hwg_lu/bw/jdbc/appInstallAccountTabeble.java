@@ -162,11 +162,35 @@ public class appInstallAccountTabeble {
 		prepStat.executeUpdate();
 		System.out.println("Table account erfolgreich angelegt");
 	}
+	public void createKontaktTable() throws SQLException {
+		String sql = "CREATE TABLE kontakt ("
+				+ "			name   CHAR(56)     NOT NULL PRIMARY KEY,"
+				+ "			telefon VARCHAR(15) NOT NULL            ,"
+				+ "			emailadresse    VARCHAR(256) NOT NULL PRIMARY KEY" 
+				+ "			body    VARCHAR(5000) NOT NULL"
+				+ "			)";
+		System.out.println(sql);
+		
+		// JDBC macht immer 2 Schritte (wenn mann den SQL-Befehl als String schon hat):
+		// erst ein "Statement" - Statement, PreparedStatement
+		// dann execute         - executeUpdate(), executeQuery(), execute()
+		PreparedStatement prepStat = dbConn.prepareStatement(sql);
+		prepStat.executeUpdate();
+		System.out.println("kontakt erfolgreich angelegt");
+	}
+	
+	
 	public void dropAccountTable() throws SQLException {
 		String sql = "DROP TABLE IF EXISTS account";
 		System.out.println(sql);
 		dbConn.prepareStatement(sql).executeUpdate();
 		System.out.println("Table account existiert (jetzt) nicht (mehr)");
+	}
+	public void dropkontaktTable() throws SQLException {
+		String sql = "DROP TABLE IF EXISTS kontakt";
+		System.out.println(sql);
+		dbConn.prepareStatement(sql).executeUpdate();
+		System.out.println("Table kontakt existiert (jetzt) nicht (mehr)");
 	}
 	
 	

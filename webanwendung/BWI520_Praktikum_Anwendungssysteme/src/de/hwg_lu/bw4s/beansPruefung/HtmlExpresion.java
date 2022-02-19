@@ -39,7 +39,7 @@ public class HtmlExpresion {
 				+ "      <a href=\"https://www.dropbox.com/sh/vui2paucod8n7u5/AADa9qqBDEnqEhvGQ53c9riEa?dl=0\" target=\"_blank\">5. Semester</a>\r\n"
 				+ "    </div>\r\n"
 				+ "  </div> ";
-		html += "                    <li><a href=\"../jsp/kontakt.jsp\">CONTACT</a></li>";
+		html += "                    <li><a href=\"../mail/kontakt.jsp\">CONTACT</a></li>";
 		html += "                    <li><a href=\"../jsp/regundlog.jsp\">LOGOUT</a></li>";
 		html += "                </ul>";
 		html += "            </div>";

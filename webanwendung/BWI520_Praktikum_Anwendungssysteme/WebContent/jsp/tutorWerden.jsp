@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="form__group">
-                        <input type="number" class="form__input" id="number" placeholder="Aleter " required step="1" min="16" max="99">
+                        <input type="number" class="form__input" id="number" placeholder="Alter " required step="1" min="16" max="99">
                         <label for="number" class="form__label" id="number-label">Ihr Alter</label>
                     </div>
                     
@@ -244,7 +244,7 @@
                        		 <table>
                        	 		<tr>
                        	 		<td>
-                        			 <button type="submit" class="submitBtn bold"><a href="../jsp/willko.jsp">abbrechen</a> </button>
+									 <button class="submitBtn bold" type="button"  ><a href="../jsp/willko.jsp">Abbrechen</a></button>
                         		</td>
                         		<td>
                         			<button type="submit" class="submitBtn bold" >senden</button>
@@ -253,7 +253,7 @@
                         		</tr>
                         	 </table>
                             
-                           
+                         
                         </div>
                     </div>
 

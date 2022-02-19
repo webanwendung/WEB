@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+body{
+	font-family: arial, sans-serif;
+	font-size: 15px;
+}
+h3{
+	text-decoration: underline;
+	
+}
+table{
+	border-collapse: collapse;
+  width: 100%;
+	}
+
+	td,th{
+	 border: 1px solid #ddd;
+  padding: 8px;
+	}
+	
+	th{
+	padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ff8000;
+  color: white;
+  }
+  
+  th:hover{
+  color: navy;
+  }
+  span .color{
+  background-color: #ffff04;
+  font-weight: bold;
+  }
+  
+ .pt{
+  font-weight: bold;
+  }

@@ -47,7 +47,7 @@ response.sendRedirect("../jsp/Fachbereich.jsp");
 }
 else if  (dok.equals("Notizen hochladen")){
 	System.out.println("notizenhochladen-Button wurde geklickt");
-response.sendRedirect("../File Upload in JavaScript/uploader.jsp");
+response.sendRedirect("../jsp/upload.jsp");
 	
 }
 else if  (tuw.equals("Tutor werden")){

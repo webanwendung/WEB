@@ -27,13 +27,15 @@
     <br>
     <div class="wrapper">
       <header>Laden sie eine Datei Hoch</header>
-      <form action="./script.js" method="post">
-        <input class="file-input" type="file" name="file" hidden>
+      <form action="./uploadennnn.jsp" enctype="multipart/form-data" method="post">
+        <input class="file-input" type="file" name="file" hidden="qwert">
         <i class="fas fa-cloud-upload-alt"></i>
         <p>Wählen Sie eine Datei aus</p>
-      </form>
+      
       <section class="progress-area"></section>
       <section class="uploaded-area"></section>
+      <button type="submit"> Upload</button>
+      </form>
     </div>
 
     <script src="./script.js"></script>
