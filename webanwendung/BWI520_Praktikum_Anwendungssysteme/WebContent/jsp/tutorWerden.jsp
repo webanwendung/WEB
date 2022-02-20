@@ -35,7 +35,7 @@
 <br>
 <br>
 
-    <form class="container" i="survey-form">
+    <form class="container" id="survey-form" action="../jsp/tutorwerdenAppl.jsp">
         <div class="introduction">
             <h1 class="title title-1" id="title">Registrieren</h1>
             <p class="text" id="description">
@@ -44,51 +44,58 @@
         </div>
 
         <div class="form-container">
-            <form class="form" id="survey-form">
+         
                 <div class="infoClient">
                     <h2 class="title title-2 title-infoClient">Persönliche Angaben</h2>
                     
                     <div class="form__group">
-                        <input type="text" class="form__input" id="name" placeholder="Name eingeben" required>
+                        <input type="text" class="form__input" id="name" name="name" value="" placeholder="Name eingeben" required>
                         <label for="name" class="form__label" id="name-label">Ihr Name</label>
                     </div>
                     
                     <div class="form__group">
-                        <input type="text" class="form__input" id="Wonhort" placeholder="Wonhort">
+                        <input type="text" class="form__input" id="Wonhort" name="Wohnort" value="" placeholder="Wonhort">
                         <label for="Wonhort" class="form__label" id="Wonhort-label">Wohnort</label>
                     </div>
 
                     <div class="form__group">
-                        <input type="email" class="form__input" id="email" placeholder="musteman@mail.de" required>
+                        <input type="email" class="form__input" id="email" name="email" value="" placeholder="musteman@mail.de" required>
                         <label for="email" class="form__label" id="email-label">Email </label>
                     </div>
                     
                     <div class="form__group">
-                        <input type="tel" class="form__input" id="tel" placeholder="+49(0)12540987521" required>
+                        <input type="tel" class="form__input" id="tel" name="tel" value="" placeholder="+49(0)12540987521" required>
                         <label for="tel" class="form__label" id="tel-label">Telefon </label>
                     </div>
                     
                     <div class="form__group">
-                        <input type="text" class="form__input" id="stg" placeholder="Studiengang" required>
+                        <input type="text" class="form__input" id="stg" name="stg" value="" placeholder="Studiengang" required>
                         <label for="stg" class="form__label" id="stg-label">Studium</label>
                     </div>
                     
                      <div class="form__group">
-                        <input type="number" class="form__input" id="number" placeholder="Semester zahl" required step="1" min="1" max="10">
+                        <input type="number" class="form__input" id="number" name="number" value="" placeholder="Semester zahl" required step="1" min="1" max="10">
                         <label for="number" class="form__label" id="number-label">Semster</label>
                     </div>
 
                     <div class="form__group">
-                        <input type="number" class="form__input" id="number" placeholder="Alter " required step="1" min="16" max="99">
-                        <label for="number" class="form__label" id="number-label">Ihr Alter</label>
+                        <input type="number" class="form__input" id="alter" name="alter" value="" placeholder="Alter " required step="1" min="16" max="99">
+                        <label for="alter" class="form__label" id="number-label">Ihr Alter</label>
                     </div>
                     
                  
 
                     <div class="form__message">
                         <label for="message" class="form__label bold">Zusatznachricht (optional):</label><br>
-                        <textarea name="" id="message" cols="30" rows="5" class="form__input form__textarea" placeholder="Ich bin zimlich...."></textarea>
+                        <textarea name="message"  id="message" cols="30" rows="5" class="form__input form__textarea"  placeholder="Ich bin zimlich...."></textarea>
                     </div>
+                    <div class="form__message">
+                      <br><br>
+                             <label for="img" class="form__label bold">laden sie greich ein Bild Hoch</label>
+                  <input type="file" id="img" >
+                    </div>
+                    
+              
 
                 </div>
 
@@ -144,7 +151,7 @@
 <br>
                     
                         <label for="journee" class="form__label bold">wann möchten Sie unterrichten?</label>
-                        <select name="journee" id="dropdown">
+                        <select name="journee" id="dropdown" >
                             <option value="montag" class="form__select-option">Montag</option>
                             <option value="dienstag" class="form__select-option">Dienstag</option>
                             <option value="mitiwoch" class="form__select-option">Mittwoch</option>
@@ -173,7 +180,7 @@
                     <div class="form__group">
                         <p class="text bold">welche Niveau haben Sie:</p>
                         <div class="radio-btn">
-                            <input type="radio" class="radio__input" id="debutant" name="niveau">
+                            <input type="radio" class="radio__input" id="debutant" name="niveau" value="Anfänger">
                             <label for="debutant" class="radio__label form__label">
                                 <span class="radio__newBtn"></span>
                                 Anfänger
@@ -181,7 +188,7 @@
                         </div>
 
                         <div class="radio-btn">
-                            <input type="radio" class="radio__input" id="intermediaire" name="niveau" checked>
+                            <input type="radio" class="radio__input" id="intermediaire" name="niveau"  value="Fortgeschrichtene" checked>
                             <label for="intermediaire" class="radio__label form__label">
                                 <span class="radio__newBtn"></span>
                                 Fortgeschritten
@@ -189,7 +196,7 @@
                         </div>
 
                         <div class="radio-btn">
-                            <input type="radio" class="radio__input" id="avance" name="niveau">
+                            <input type="radio" class="radio__input" id="avance" name="niveau" value="Expert">
                             <label for="avance" class="radio__label form__label">
                                 <span class="radio__newBtn"></span>
                                 Expert
@@ -201,7 +208,7 @@
                         <p class="text bold">Welche(n) Unterrichtsstil(e) ?</p>
 
                         <div class="check-btn">
-                            <input type="checkbox" class="cours__type-input" id="group" name="styleCours" value=" Gruppen Arbeit">
+                            <input type="checkbox" class="cours__type-input" id="group" name="styleCours" value="Gruppen Arbeit">
                             <label for="group" class="form__label check__label">
                                 <span class="check__newBtn"></span>
                                 Gruppen Arbeit
@@ -209,7 +216,7 @@
                         </div>
 
                         <div class="check-btn">
-                            <input type="checkbox" class="cours__type-input" id="einzel" name="styleCours" value=" Einzel Arbeit">
+                            <input type="checkbox" class="cours__type-input" id="einzel" name="styleCours" value="Einzel Arbeit">
                             <label for="einzel" class="form__label check__label">
                                 <span class="check__newBtn"></span>
                                 Einzel Arbeit
@@ -244,13 +251,14 @@
                        		 <table>
                        	 		<tr>
                        	 		<td>
-									 <button class="submitBtn bold" type="button"  ><a href="../jsp/willko.jsp">Abbrechen</a></button>
+									 <button class="submitBtn bold" type="button"><a href="../jsp/willko.jsp">Abbrechen</a></button>
                         		</td>
                         		<td>
-                        			<button type="submit" class="submitBtn bold" >senden</button>
+                        			<button type="submit" class="submitBtn bold"  name="senden" value="senden">senden</button>
                         		</td>
                         			
                         		</tr>
+                        		
                         	 </table>
                             
                          
@@ -259,12 +267,13 @@
 
                 </div>
  </div>
+ 
             </form>
         
 
        
        
-</body>
+
   
   </body> 
 </html>

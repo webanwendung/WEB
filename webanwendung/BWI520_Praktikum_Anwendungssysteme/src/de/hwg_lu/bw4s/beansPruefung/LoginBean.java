@@ -19,7 +19,7 @@ public class LoginBean {
 	}
 	
 	public boolean checkUseridPassword() throws SQLException {
-		String sql = "SELECT userid, password from account where userid = ? and password = ?";
+		String sql = "SELECT userid, password from accounts where userid = ? and password = ?";
 		System.out.println(sql);
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
@@ -29,7 +29,7 @@ public class LoginBean {
 		return dbRes.next();
 	}
 	public boolean checkUseridPassword2() throws SQLException {
-		String sql = "SELECT userid, password from account where userid = ?";
+		String sql = "SELECT userid, password from accounts where userid = ?";
 		System.out.println(sql);
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
