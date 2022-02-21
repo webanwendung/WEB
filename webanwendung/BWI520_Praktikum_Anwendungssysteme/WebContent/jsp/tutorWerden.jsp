@@ -5,7 +5,7 @@
 <%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html> 
   <head> 
     <meta charset="UTF-8">
@@ -35,7 +35,8 @@
 <br>
 <br>
 
-    <form class="container" id="survey-form" action="../jsp/tutorwerdenAppl.jsp">
+    <form class="container" id="survey-form" action="../jsp/tutorwerdenAppl.jsp" 
+			method="post" enctype="multipart/mixed">
         <div class="introduction">
             <h1 class="title title-1" id="title">Registrieren</h1>
             <p class="text" id="description">
@@ -89,9 +90,10 @@
                         <label for="message" class="form__label bold">Zusatznachricht (optional):</label><br>
                         <textarea name="message"  id="message" cols="30" rows="5" class="form__input form__textarea"  placeholder="Ich bin zimlich...."></textarea>
                     </div>
+                    
                     <div class="form__message">
                       <br><br>
-                             <label for="img" class="form__label bold">laden sie greich ein Bild Hoch</label>
+                             <label for="img" class="form__label bold">laden Sie gleich ein Bild von Ihnen Hoch</label>
                   <input type="file" id="img" >
                     </div>
                     
@@ -108,7 +110,7 @@
                      <p class="text bold">wo möchten sie unterstzützen</p>
 
                         <div class="check-btn">
-                            <input type="checkbox" class="cours__type-input" id="Programmierung" name="Cours" value="Programmierung">
+                            <input type="checkbox" class="cours__type-input" id="Programmierung" name="Cours" value="Programmierung" checked="checked">
                             <label for="Programmierung" class="form__label check__label">
                                 <span class="check__newBtn"></span>
                                 Programmierung
@@ -116,7 +118,7 @@
                         </div>
 
                         <div class="check-btn">
-                            <input type="checkbox" class="cours__type-input" id="Webentwiklung" name="Cours" value="Webentwiklung">
+                            <input type="checkbox" class="cours__type-input" id="Webentwiklung" name="Cours" value="Webentwiklung" checked="checked">
                             <label for="Webentwiklung" class="form__label check__label">
                                 <span class="check__newBtn"></span>
                                 Webentwiklung
@@ -140,7 +142,7 @@
                         </div>
                         
                          <div class="check-btn">
-                            <input type="checkbox" class="cours__type-input" id="Unternehmensführung" name="Cours" value="Unternehmensführung">
+                            <input type="checkbox" class="cours__type-input" id="Unternehmensführung" name="Cours" value="Unternehmensfuehrung">
                             <label for="Unternehmensführung" class="form__label check__label">
                                 <span class="check__newBtn"></span>
                                 Unternehmensführung
@@ -180,7 +182,7 @@
                     <div class="form__group">
                         <p class="text bold">welche Niveau haben Sie:</p>
                         <div class="radio-btn">
-                            <input type="radio" class="radio__input" id="debutant" name="niveau" value="Anfänger">
+                            <input type="radio" class="radio__input" id="debutant" name="niveau" value="Anfaenger">
                             <label for="debutant" class="radio__label form__label">
                                 <span class="radio__newBtn"></span>
                                 Anfänger
@@ -224,7 +226,7 @@
                         </div>
 
                         <div class="check-btn">
-                            <input type="checkbox" class="cours__type-input" id="vorort" name="styleCours" value="vorort">
+                            <input type="checkbox" class="cours__type-input" id="vorort" name="styleCours" value="Praesentiel" checked="checked">
                             <label for="vorort" class="form__label check__label">
                                 <span class="check__newBtn"></span>
                                 Präsens
@@ -232,7 +234,7 @@
                         </div>
 
                         <div class="check-btn">
-                            <input type="checkbox" class="cours__type-input" id="remote" name="styleCours" value="remote">
+                            <input type="checkbox" class="cours__type-input" id="remote" name="styleCours" value="remote Arbeit">
                             <label for="remote" class="form__label check__label">
                                 <span class="check__newBtn"></span>
                                 Remote
@@ -240,7 +242,7 @@
                         </div>
                         
                          <div class="check-btn">
-                            <input type="checkbox" class="cours__type-input" id="egal" name="styleCours" value="egal">
+                            <input type="checkbox" class="cours__type-input" id="egal" name="styleCours" value="ich bin flexible">
                             <label for="egal" class="form__label check__label">
                                 <span class="check__newBtn"></span>
                                 ich bin flexible

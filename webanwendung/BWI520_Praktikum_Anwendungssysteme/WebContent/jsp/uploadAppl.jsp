@@ -55,7 +55,7 @@
     
     try {
        // Parse the request to get file items.
-       List fileItems = upload.parseRequest(request);
+       List filesItems = upload.parseRequest(request);
        
        // Parse the request to get parameter.
        String file_name = (String) request.getParameter("file2");
@@ -63,13 +63,9 @@
        String fach = (String) request.getParameter("fach");
  
        // Process the uploaded file items
-       Iterator i = fileItems.iterator();
+       Iterator i = filesItems.iterator();
  
-     /*  out.println("<html>");
-       out.println("<head>");
-       out.println("<title> File uploaded </title>"); 
-         out.println("</head>");
-       out.println("<body>");*/
+     
       
        while ( i.hasNext () ) {
           FileItem fi = (FileItem)i.next();
@@ -96,20 +92,12 @@
           }
        }
        response.sendRedirect("./upload.jsp");
-       out.println("</body>");
-         out.println("</html>");
+       
     } catch(Exception ex) {
        System.out.println(ex);
     }
    } else {
 	   response.sendRedirect("./upload.jsp");
-    out.println("<html>");
-    out.println("<head>");
-    out.println("<title>Servlet upload</title>"); 
-    out.println("</head>");
-    out.println("<body>");
-out.println("<p>No file uploaded</p>");
-    out.println("</body>");
-    out.println("</html>");
+    
    }
 %>

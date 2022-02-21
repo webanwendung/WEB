@@ -40,8 +40,8 @@ public class Tutorbeans {
 		this.semesterzahl = "";
 		this.unterrichtet = "";
 		this.unterrichstill = "";
-		this.alltutor=new Vector<Tutor>();
-		this.readAllTutorsFromDB();
+//		this.alltutor=new Vector<Tutor>();
+//		this.readAllTutorsFromDB();
 	}
 	public void readAllTutorsFromDB() throws NoConnectionException, SQLException {
 		 String sql="select name,studiengang,semesterzahl,unterrichtet,unterrichstill from tutor";
