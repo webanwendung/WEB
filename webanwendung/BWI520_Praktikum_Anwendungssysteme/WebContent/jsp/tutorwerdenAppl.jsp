@@ -104,7 +104,7 @@ if (senden.equals("senden")){
 		
 		tutorBean.insertAccount();
 	
-		response.sendRedirect("../jsp/tutorWerden.jsp");
+		response.sendRedirect("../jsp/tutorwerdenUploadimg.jsp");
 	   
 	   }
 else {

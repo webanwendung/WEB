@@ -167,7 +167,7 @@ public class Tutorbeans {
 		return name;
 	}
 	public String getNameForHtml() {
-		return" <h1> Hey "+ name +"laden doch gleich ein Bild von dir Hoch</h1>";
+		return" <h1> Hey "+ name +"lade doch gleich ein Bild von dir Hoch</h1>";
 	}
 	public void setName(String name) {
 		this.name = name;
