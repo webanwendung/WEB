@@ -5,7 +5,7 @@
 <%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html> 
   <head> 
     <meta charset="UTF-8">
@@ -36,7 +36,7 @@
 <br>
 
     <form class="container" id="survey-form" action="../jsp/tutorwerdenAppl.jsp" 
-			method="post" enctype="multipart/mixed">
+			method="post" >
         <div class="introduction">
             <h1 class="title title-1" id="title">Registrieren</h1>
             <p class="text" id="description">

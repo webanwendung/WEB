@@ -152,8 +152,22 @@ public class Tutorbeans {
 		System.out.println("Tutor " + this.name + " wurde erfolgreich angelegt");
 		
 	}
+	public void setUpdateFoto() throws SQLException {
+		String sql="UPDATE bwi520_632134.tutor\r\n"
+				+ "SET  foto='"+ this.fotoname +"' WHERE email='"+this.email+"';";
+		System.out.println(sql);
+		Connection dbConn= new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		
+		prep.executeUpdate();
+		System.out.println("Tutor " + this.name + " wurde erfolgreich updated");
+		
+	}
 	public String getName() {
 		return name;
+	}
+	public String getNameForHtml() {
+		return" <h1> Hey "+ name +"laden doch gleich ein Bild von dir Hoch</h1>";
 	}
 	public void setName(String name) {
 		this.name = name;
