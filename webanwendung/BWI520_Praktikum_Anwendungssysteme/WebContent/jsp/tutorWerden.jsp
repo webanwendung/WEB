@@ -91,13 +91,7 @@
                         <textarea name="message"  id="message" cols="30" rows="5" class="form__input form__textarea"  placeholder="Ich bin zimlich...."></textarea>
                     </div>
                     
-                    <div class="form__message">
-                      <br><br>
-                             <label for="img" class="form__label bold">laden Sie gleich ein Bild von Ihnen Hoch</label>
-                  <input type="file" id="img" >
-                    </div>
-                    
-              
+                                  
 
                 </div>
 

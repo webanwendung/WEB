@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>upload a file</title>
+<title>upload a file iomage</title>
 <head>
 
 <link href='../css/Navigation.css' rel='stylesheet' type='text/css'>
