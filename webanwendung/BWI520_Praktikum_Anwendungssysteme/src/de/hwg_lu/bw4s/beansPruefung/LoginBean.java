@@ -47,9 +47,10 @@ public class LoginBean {
 	}
 	
 	public String getLoginauftrag() {//wenn man eingelogt ist verschwindet diese
-		String html = getUserid();
+		String userId = getUserid();
+		String html="";
 		System.out.println(html);
-		if (html=="nx") {
+		if (userId=="nx") {
 			html="<div class='form'>";
 					html+="<h2>Haben sie bereit einen Account?</h2>'";
 					html+="<button class='btnn'><a href='../jsp/regundlog.jsp'>Login</a></button><br><br>";

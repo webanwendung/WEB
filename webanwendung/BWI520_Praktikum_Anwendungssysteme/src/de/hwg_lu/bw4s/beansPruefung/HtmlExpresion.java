@@ -6,6 +6,15 @@ package de.hwg_lu.bw4s.beansPruefung;
  
 public class HtmlExpresion {
 
+	String login="LOGIN";
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
 	public HtmlExpresion() {
 		LoginBean login = new LoginBean();
 	}
@@ -40,7 +49,7 @@ public class HtmlExpresion {
 				+ "    </div>\r\n"
 				+ "  </div> ";
 		html += "                    <li><a href=\"../mail/kontakt.jsp\">CONTACT</a></li>";
-		html += "                    <li><a href=\"../jsp/regundlog.jsp\">LOGOUT</a></li>";
+		html += "                    <li><a href=\"../jsp/LogUndRegAppl.jsp\">"+getLogin()+"</a></li>";
 		html += "                </ul>";
 		html += "            </div>";
 

@@ -100,6 +100,7 @@ if (senden.equals("senden")){
 		tutorBean.setUnterrichstill(coursestyllestring);
 		tutorBean.setNiveau(niveau);
 		tutorBean.setTel(tel);
+		//es ist opttional bis die richtige foto gesetzt wird
 		tutorBean.setFotoname("null");
 		
 		tutorBean.insertAccount();

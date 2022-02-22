@@ -46,7 +46,7 @@ public class AccountBean {
 	public boolean checkAccountExists3() throws SQLException{
 		// true - this.userid wurde in der DB-Tabelle account gefunden
 		// false - this.userid wurde in account nicht gefunden
-		String sql = "select userid from account";
+		String sql = "select userid from accounts";
 		this.dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 		ResultSet dbRes = prep.executeQuery();
@@ -64,7 +64,7 @@ public class AccountBean {
 	public boolean checkAccountExists2() throws SQLException{
 		// true - this.userid wurde in der DB-Tabelle account gefunden
 		// false - this.userid wurde in account nicht gefunden
-		String sql = "select count(*) from account where userid = ?";
+		String sql = "select count(*) from accounts where userid = ?";
 		this.dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 		prep.setString(1, this.userid);
@@ -82,7 +82,7 @@ public class AccountBean {
 	public boolean checkAccountExists() throws NoConnectionException, SQLException {
 		// true - this.userid wurde in der DB-Tabelle account gefunden
 		// false - this.userid wurde in account nicht gefunden
-		String sql = "select userid from account where userid = ?";
+		String sql = "select userid from accounts where userid = ?";
 		this.dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 		prep.setString(1, this.userid);
@@ -116,7 +116,7 @@ public class AccountBean {
 	}
 
 	public void insertAccountNoCheck() throws NoConnectionException, SQLException {
-		String sql = "insert into account (userid, password, active, admin, username, email) values (?, ?, ?, ?, ?, ?)";
+		String sql = "insert into accounts (userid, password, active, admin, username, email) values (?, ?, ?, ?, ?, ?)";
 		System.out.println(sql);
 		this.dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);

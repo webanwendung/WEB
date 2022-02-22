@@ -1,8 +1,6 @@
 <%@page import="de.hwg_lu.bw4s.beansPruefung.LoginBean"%>
 <%@page import="de.hwg_lu.bw4s.beansPruefung.AccountBean"%>
 <%@page import="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion"%>
-
-
 <%@page import="java.sql.SQLException"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>

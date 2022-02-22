@@ -1,6 +1,7 @@
 <%@page import="de.hwg_lu.bw4s.beansPruefung.AccountBean"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,6 +13,7 @@
 <body>
 <jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
 <jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
+<jsp:useBean id="htmlexprexion" class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
 
 <%!
 public String denullify(String inputString){
@@ -33,6 +35,10 @@ String username = request.getParameter("userreg");
 String email = request.getParameter("email");
 //String btnLogin = request.getParameter("login");
 //Buttons
+// testen outlogen
+	loginBean.setUserid("nx");
+	loginBean.setPassword("");
+	htmlexprexion.setLogin("LOGIN");
 System.out.println(userid);
 System.out.println(username);
 System.out.println(username);
@@ -75,6 +81,7 @@ if (register.equals("Registrieren")){
 else if (login.equals("Log In")){
 	loginBean.setUserid(useridlogin);
 	loginBean.setPassword(passwordlogin);
+	htmlexprexion.setLogin("LOGOUT");
 	System.out.println(" versuch einzulogen eingelietet");
 	try{
 		boolean useridPasswordOk = loginBean.checkUseridPassword();
