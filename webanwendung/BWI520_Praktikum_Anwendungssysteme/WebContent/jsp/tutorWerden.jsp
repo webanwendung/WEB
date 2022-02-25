@@ -247,7 +247,7 @@
                        		 <table>
                        	 		<tr>
                        	 		<td>
-									 <button class="submitBtn bold" type="button"><a href="../jsp/willko.jsp">Abbrechen</a></button>
+									<a class="submitBtn bold" style="text-decoration: none"  href="../jsp/willko.jsp">Abbrechen</a>
                         		</td>
                         		<td>
                         			<button type="submit" class="submitBtn bold"  name="senden" value="senden">senden</button>

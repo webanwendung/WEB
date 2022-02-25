@@ -114,6 +114,7 @@ p.text,
 }
 .bold {
     font-weight: bold;
+    
 }
 
 /* PARTIE INTRO */
@@ -324,12 +325,18 @@ p.text,
     border: none;
     outline: none;
     color: #fff;
+    text-decoration: none;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     font-family: inherit;
     font-size: 1.8rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     transition: all 0.2s;
     margin-left: 0.3cm;
+}
+.submitBtn {
+    color: white;
+    text-decoration: none;
+     font-size: solid;
 }
 
 .submitBtn:hover {

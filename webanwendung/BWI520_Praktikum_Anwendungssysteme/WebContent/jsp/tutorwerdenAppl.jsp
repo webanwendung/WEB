@@ -53,12 +53,12 @@ String coursestring="";
 
 for (int i = 0; i < Cours.length; i++) {
 	System.out.println(Cours[i]);
-	coursestring+=Cours[i];
+	coursestring+= Cours[i]+", ";
 }
 String coursestyllestring="";
 for (int i = 0; i < styleCours.length; i++) {
 	System.out.println(styleCours[i]);
-	coursestyllestring=styleCours[i];
+	coursestyllestring+=styleCours[i]+", ";
 }
 //String btnLogin = request.getParameter("login");
 
@@ -97,6 +97,7 @@ if (senden.equals("senden")){
 		tutorBean.setAlter(alter);
 		tutorBean.setEmail(email);
 		tutorBean.setUnterrichtet(coursestring);
+		tutorBean.setStudiengang(Studiengang);
 		tutorBean.setUnterrichstill(coursestyllestring);
 		tutorBean.setNiveau(niveau);
 		tutorBean.setTel(tel);

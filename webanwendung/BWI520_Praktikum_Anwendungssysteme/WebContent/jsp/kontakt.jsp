@@ -3,7 +3,7 @@
 <%@page import="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -16,6 +16,7 @@
  <jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
 <jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
 <jsp:useBean id="htmlexprexion" class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
+<jsp:useBean id="kontaktBean"class="de.hwg_lu.bw4s.beansPruefung.KontakBean" scope="session" />
  
  <jsp:getProperty property="navigation" name="htmlexprexion"/>
   
@@ -32,7 +33,7 @@
 	<div class="row input-container">
 			<div class="col-xs-12">
 				<div class="styled-input wide">
-					<input type="text" required />
+					<input type="text" name="name" value="" required />
 					<label>Name</label> 
 				</div>
 			</div>
@@ -44,18 +45,18 @@
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<div class="styled-input" style="float:right;">
-					<input type="text" required />
+					<input type="text" name="telefon" value="" required />
 					<label>Phone Number</label> 
 				</div>
 			</div>
 			<div class="col-xs-12">
 				<div class="styled-input wide">
-					<textarea name="body"  required></textarea>
+					<textarea  name="Message" value="" required></textarea>
 					<label>Message</label>
 				</div>
 			</div>
 			<div class="col-xs-12">
-				<div ><button type="submit"  class="btn-lrg submit-btn">Send Message</button></div>
+				<div ><button  type="submit"  name="senden"  title="Send Message" value="Send Message" class="btn-lrg submit-btn">Send Message</button></div>
 			</div>
 	</div>
 	</form>

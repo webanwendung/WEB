@@ -16,7 +16,7 @@ public class HtmlExpresion {
 	}
 
 	public HtmlExpresion() {
-		LoginBean login = new LoginBean();
+	AccountBean a =new AccountBean();
 	}
 
 	public  String getNavigation() {
@@ -63,6 +63,38 @@ public class HtmlExpresion {
 		return html;
 
 	}
+	public  String getBottom() {
+
+		String html = "<button onclick=\"topFunction()\" id=\"myBtn\" title=\"Go to top\">Back to top</button>\r\n"
+				+ "\r\n"
+				+ "\r\n"
+				+ "<script>\r\n"
+				+ "//Get the button\r\n"
+				+ "var mybutton = document.getElementById(\"myBtn\");\r\n"
+				+ "\r\n"
+				+ "// When the user scrolls down 20px from the top of the document, show the button\r\n"
+				+ "window.onscroll = function() {scrollFunction()};\r\n"
+				+ "\r\n"
+				+ "function scrollFunction() {\r\n"
+				+ "  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {\r\n"
+				+ "    mybutton.style.display = \"block\";\r\n"
+				+ "  } else {\r\n"
+				+ "    mybutton.style.display = \"none\";\r\n"
+				+ "  }\r\n"
+				+ "}\r\n"
+				+ "\r\n"
+				+ "// When the user clicks on the button, scroll to the top of the document\r\n"
+				+ "function topFunction() {\r\n"
+				+ "  document.body.scrollTop = 0;\r\n"
+				+ "  document.documentElement.scrollTop = 0;\r\n"
+				+ "}\r\n"
+				+ "\r\n"
+				+ "</script>";
+		
+		return html;
+		
+	}
+	
 	
 
 }

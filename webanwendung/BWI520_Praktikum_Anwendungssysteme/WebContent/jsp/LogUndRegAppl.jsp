@@ -29,26 +29,58 @@ public String[] denullify(String[] inputStringArray){
 String userid = request.getParameter("userlogin");
 String useridlogin = request.getParameter("userlogin");
 String passwordlogin = request.getParameter("passlogin");
-String password = request.getParameter("pass1");
+String password = request.getParameter("pass");
 String password2 = request.getParameter("pass2");
 String username = request.getParameter("userreg");
 String email = request.getParameter("email");
+String emailreset = request.getParameter("emailreset");
+
+//passwort vegessen
+String pass1 = request.getParameter("passreset1");
+String pass2 = request.getParameter("passreset2");
 //String btnLogin = request.getParameter("login");
 //Buttons
 // testen outlogen
 	loginBean.setUserid("nx");
 	loginBean.setPassword("");
 	htmlexprexion.setLogin("LOGIN");
-System.out.println(userid);
-System.out.println(username);
-System.out.println(username);
-System.out.println(password);
-System.out.println(username);
-System.out.println(email);
+	
+System.out.println(emailreset);
+
 String register = this.denullify(request.getParameter("register"));
 String login = this.denullify(request.getParameter("login"));
+String zuruchsetzen = this.denullify(request.getParameter("reset"));
+String passvergessen = this.denullify(request.getParameter("passvergessen"));
+String passwortBestaetigen = this.denullify(request.getParameter("newpass"));
 
-if (register.equals("Registrieren")){
+if (zuruchsetzen.equals("passwort zuruesetzen")){
+	System.out.println("emailreset-Button wurde geklickt");
+	accountBean.setPassvergessen(false);
+	System.out.println(emailreset);
+	accountBean.setEmail(emailreset);
+	accountBean.getPasswordforgot();
+	response.sendRedirect("./regundlog.jsp");
+}
+else if (passvergessen.equals("Passwort vergessen")){
+	System.out.println("passvergessen-Button wurde geklickt");
+	accountBean.setAccoutcheck(true);
+	accountBean.setPassvergessen(true);
+	accountBean.getPasswordforgot();
+	
+	response.sendRedirect("./regundlog.jsp");
+}
+else if (passwortBestaetigen.equals("passwort Bestaetigen")){
+	
+	System.out.println("passwort Bestaetigen- Button wurde geklickt ##set uptdat");
+	System.out.println(emailreset);
+	{
+		accountBean.setAccoutcheck(true);
+		accountBean.setUpdatePasswordforgot(pass1);
+		accountBean.setUpdat("<br> <br> Ihr Passwort wurde erfolgreich aktualisiert, bitte einloggen");
+	}
+	response.sendRedirect("./regundlog.jsp");
+}
+else if (register.equals("Registrieren")){
 	System.out.println("Registrieren-Button wurde geklickt");
 
 	accountBean.setUserid(email);
@@ -105,8 +137,12 @@ else if (login.equals("Log In")){
 }
 
 else{
-	System.out.println("kein Button gedrückt");
+	System.out.println("kein Button gedrückt auch nich pass vegessen");
 	//messageBean.setGeneralWelcome();
+	accountBean.setPassvergessen(false);
+	accountBean.setAccoutcheck(false);
+	accountBean.setUpdat("");
+	
 	response.sendRedirect("./regundlog.jsp");
 }
 

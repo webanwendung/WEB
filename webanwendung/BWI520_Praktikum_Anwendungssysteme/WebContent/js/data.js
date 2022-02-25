@@ -36,6 +36,25 @@ var defaultThreads = [
                 content: "Hey eine selection in html ist....."
             }
         ]
+    },
+    {
+        id: 2,
+        title: " was ist eine Selection",
+        author: "Sarah Kouakou",
+        date: Date.now(),
+        content: "Thread content 2",
+        comments: [
+            {
+                author: "sarah",
+                date: Date.now(),
+                content: "Hey there"
+            },
+            {
+                author: "Frank Tsidie",
+                date: Date.now(),
+                content: "Hey eine selection in html ist....."
+            }
+        ]
     }
 ]
 

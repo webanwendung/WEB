@@ -12,6 +12,7 @@ public class LoginBean {
 	String userid;
 	String password;
 	boolean isLoggedIn;
+	boolean isAdmin;
 	
 	public LoginBean() {
 		this.userid = "nx";
@@ -28,6 +29,7 @@ public class LoginBean {
 		ResultSet dbRes = prep.executeQuery();
 		return dbRes.next();
 	}
+	
 	public boolean checkUseridPassword2() throws SQLException {
 		String sql = "SELECT userid, password from accounts where userid = ?";
 		System.out.println(sql);
@@ -60,6 +62,21 @@ public class LoginBean {
 		
 		return html;
 		}
+	public String getAdmin() throws SQLException {//wenn man eingelogt ist und admin dann kann man tutoren verwalten
+		String sql = "SELECT userid, password from accounts where userid = ? and password = ? and admin= ?";
+		System.out.println(sql);
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		prep.setString(1, this.userid);
+		prep.setString(2, this.password);
+		prep.setString(3, "Y");
+		ResultSet dbRes = prep.executeQuery();
+		boolean admin= dbRes.next();
+		if (admin) {
+			return "<input class=\"cn\" type=\"submit\" name=\"saa\"value=\"Account Verwaltung\"> <input class=\"cn\" type=\"submit\" name=\"sat\"value=\"Tutor Verwaltung\">  <br> <br> <input class=\"cn\" type=\"submit\" name=\"kontakt\"value=\"Narichten Verwaltung\">  ";
+		}
+		return "";
+	}
 
 	public String getUserid() {
 		return userid;

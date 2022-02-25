@@ -39,6 +39,9 @@ String dok = this.denullify(request.getParameter("dok"));
 String tuw = this.denullify(request.getParameter("tuw"));
 String tuf = this.denullify(request.getParameter("tuf"));
 String forum = this.denullify(request.getParameter("forum"));
+String sat = this.denullify(request.getParameter("sat"));
+String kontakt = this.denullify(request.getParameter("kontakt"));
+String saa = this.denullify(request.getParameter("saa"));
 
 if (kurse.equals("zu den Lernunterlagen")){
 	System.out.println("kurse-Button wurde geklickt");
@@ -62,7 +65,22 @@ response.sendRedirect("../jsp/tutorfinden.jsp");
 }
 else if  (forum.equals("eine Frage im Forum stellen")){
 	System.out.println("forumseite-Button wurde geklickt");
-response.sendRedirect("../forum/forums.html");
+response.sendRedirect("../html/forumindex.html");
+	
+}
+else if  (sat.equals("Tutor Verwaltung")){
+	System.out.println("Tutor verwalten-Button wurde geklickt");
+response.sendRedirect("../jsp/showAlltutor.jsp");
+	
+}
+else if  (kontakt.equals("Narichten Verwaltung")){
+	System.out.println("Tutor verwalten-Button wurde geklickt");
+response.sendRedirect("../jsp/showAllkontakt.jsp");
+	
+}
+else if  (saa.equals("Account Verwaltung")){
+	System.out.println("Tutor verwalten-Button wurde geklickt");
+response.sendRedirect("../jsp/showAllaccount.jsp");
 	
 }
 else {
