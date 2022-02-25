@@ -1,0 +1,97 @@
+
+<!DOCTYPE html >
+<html> 
+  <head> 
+      <title> My STUDCIM Forum</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,700|Lobster&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/Navigation.css">
+	<link rel="stylesheet" href="../css/forum.css">
+
+
+  </head> 
+
+  <body> 
+<jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
+<jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
+<jsp:useBean id="htmlexprexion" class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
+
+  <jsp:getProperty property="navigation" name="htmlexprexion"/>
+         
+         
+    <div  class="top-bar">
+        <h1>
+            STUDCOM.Forum
+        </h1>
+    </div>
+    <div class="forum_main">
+        <div class="header">
+        </div>
+        <textarea ></textarea>
+        
+         <table><tr><td><button>add comment</button></td> <td> <button   > <a href="../html/forumindex.html"> zurück </a></button></td></tr></table>
+        <div class="comments">
+        </div>
+    </div>
+    <script src="../js/data.js"></script>
+    <script>
+        var id = window.location.search.slice(1);
+        var thread = threads.find(t => t.id == id);
+        var header = document.querySelector('.header');
+        var headerHtml = `
+            <h4 class="title">
+                ${thread.title}
+            </h4>
+            <div class="bottom">
+                <p class="timestamp">
+                    ${new Date(thread.date).toLocaleString()}
+                </p>
+                <p class="comment-count">
+                    ${thread.comments.length} comments
+                </p>
+            </div>
+        `
+        header.insertAdjacentHTML('beforeend', headerHtml)
+
+        function addComment(comment) {
+            var commentHtml = `
+                <div class="comment">
+                    <div class="top-comment">
+                        <p class="user">
+                            ${comment.author}
+                        </p>
+                        <p class="comment-ts">
+                            ${new Date(comment.date).toLocaleString()}
+                        </p>
+                    </div>
+                    <div class="comment-content">
+                        ${comment.content}
+                    </div>
+                </div>
+            `
+            comments.insertAdjacentHTML('beforeend', commentHtml);
+        }
+
+        var comments = document.querySelector('.comments');
+        for (let comment of thread.comments) {
+            addComment(comment);
+        }
+
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function() {
+            var txt = document.querySelector('textarea');
+            var comment = {
+                content: txt.value,
+                date: Date.now(),
+                author:  'Frank'
+            }
+            addComment(comment);
+            txt.value = '';
+            thread.comments.push(comment);
+            localStorage.setItem('threads', JSON.stringify(threads));
+        })
+    </script>
+   
+</body>
+</html>

@@ -15,9 +15,26 @@ public class AccountBean {
 	String admin;
 	String username;
 	String email;
-
+boolean accoutcheck;
+String updat="";
 	Connection dbConn;
 	
+	public String getUpdat() {
+		return updat;
+	}
+
+	public void setUpdat(String updat) {
+		this.updat = updat;
+	}
+
+	public Connection getDbConn() {
+		return dbConn;
+	}
+
+	public void setDbConn(Connection dbConn) {
+		this.dbConn = dbConn;
+	}
+
 	public AccountBean(){
 //		this.dbConn = new PostgreSQLAccess().getConnection();
 		this.userid   = "";
@@ -26,6 +43,106 @@ public class AccountBean {
 		this.admin    = "";
 		this.username = "";
 		this.email    = "";
+	}
+	
+	public boolean isAccoutcheck() {
+		return accoutcheck;
+	}
+
+	public void setAccoutcheck(boolean accoutcheck) {
+		this.accoutcheck = accoutcheck;
+	}
+	public void setUpdatePasswordforgot( String passwd) throws SQLException {
+		String sql="UPDATE bwi520_632134.accounts SET password='"+ passwd+"' WHERE userid='"+ this.getEmail()+"';";
+		System.out.println(sql);
+		Connection dbConn= new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		
+		prep.executeUpdate();
+		System.out.println("passwort wurde geändert");
+		
+	}
+	boolean vorhanden =false;
+	public boolean getPasswordforgot() throws SQLException {
+		
+		String sql = "select email from accounts where userid = ?";
+		this.dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = this.dbConn.prepareStatement(sql);
+		prep.setString(1, getEmail());
+		ResultSet dbRes =prep.executeQuery();
+		
+		if(dbRes.next()) {
+			 vorhanden =true;
+			
+		}
+		
+		return vorhanden;
+		
+	}
+	boolean passvergessen= false;
+	public boolean isPassvergessen() {
+		return passvergessen;
+	}
+
+	public void setPassvergessen(boolean passvergessen) {
+		this.passvergessen = passvergessen;
+	}
+
+	public  String getLoggin() throws SQLException {
+		
+		
+		if (updat!="") {
+			
+			return updat;
+		}
+		if (passvergessen== true) {
+			System.out.println("passwort ist vergessen!");
+		
+			String html = "<br>\r\n"
+					+ "					<br>\r\n"
+					+ "					<br>\r\n"
+					+ "					<div class=\"group\">\r\n"
+					+ "					<label for=\"user\" class=\"label\">enter your Email please!</label>\r\n"
+					+ "					<input  name=\"emailreset\" type=\"text\" value=\"\" class=\"input\" title=\"enter your Email please!\" \">\r\n"
+					+ "					<br>\r\n"
+					+ "					<br>\r\n"
+					+ "					<input class=\"button\" type=\"submit\" type=\"text\" name=\"reset\" value=\"passwort zuruesetzen\" title=\"reset password\" >\r\n"
+					+ "					</div>\r\n"
+					+ "					<br>";
+			return html ;
+		}
+		if (accoutcheck) {
+			if (!vorhanden) {
+				return"<br><br><br> Account not found sorry";
+			}
+			
+			System.out.println(getEmail()+" ich existiere from aucount chekDB");
+			String html = "<br>"
+					+ "					<br>\r\n"
+					+ "					<br>\r\n"
+					+ "					<div class=\"group\">\r\n"
+					+ "					<label for=\"user\" class=\"label\">enter your New password please!</label>\r\n"
+					+ "					<input  name=\"passreset1\" type=\"password\" value=\"\"   class=\"input\" title=\"enter a new Password please!\" \">\r\n"
+					+ "					<br><label for=\"user\" class=\"label\">confirm the password please!</label>\r\n"
+
+					+ "					<input  name=\"passreset2\" type=\"password\" value=\"\" class=\"input\" title=\"confirm the password  please!\" \">\r\n"
+					+ "					<br>\r\n"
+					+ "					<br>\r\n"
+					+ "					<input class=\"button\" type=\"submit\"  name=\"newpass\" value=\"passwort Bestaetigen\" title=\"reset password\" >\r\n"
+					+ "					</div>\r\n"
+					+ "					<br>";
+			System.out.println("accout existiert!");
+			return html;
+			}
+		
+		
+		if (accoutcheck=false) {
+			return "<br><br><br>Account not found";
+		}
+			return"";		
+		
+		
+		
 	}
 	
 	public boolean insertAccountIfNotExists() throws SQLException {
@@ -46,7 +163,7 @@ public class AccountBean {
 	public boolean checkAccountExists3() throws SQLException{
 		// true - this.userid wurde in der DB-Tabelle account gefunden
 		// false - this.userid wurde in account nicht gefunden
-		String sql = "select userid from account";
+		String sql = "select userid from accounts";
 		this.dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 		ResultSet dbRes = prep.executeQuery();
@@ -64,7 +181,7 @@ public class AccountBean {
 	public boolean checkAccountExists2() throws SQLException{
 		// true - this.userid wurde in der DB-Tabelle account gefunden
 		// false - this.userid wurde in account nicht gefunden
-		String sql = "select count(*) from account where userid = ?";
+		String sql = "select count(*) from accounts where userid = ?";
 		this.dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 		prep.setString(1, this.userid);
@@ -82,7 +199,7 @@ public class AccountBean {
 	public boolean checkAccountExists() throws NoConnectionException, SQLException {
 		// true - this.userid wurde in der DB-Tabelle account gefunden
 		// false - this.userid wurde in account nicht gefunden
-		String sql = "select userid from account where userid = ?";
+		String sql = "select userid from accounts where userid = ?";
 		this.dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 		prep.setString(1, this.userid);
@@ -116,7 +233,7 @@ public class AccountBean {
 	}
 
 	public void insertAccountNoCheck() throws NoConnectionException, SQLException {
-		String sql = "insert into account (userid, password, active, admin, username, email) values (?, ?, ?, ?, ?, ?)";
+		String sql = "insert into accounts (userid, password, active, admin, username, email) values (?, ?, ?, ?, ?, ?)";
 		System.out.println(sql);
 		this.dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);

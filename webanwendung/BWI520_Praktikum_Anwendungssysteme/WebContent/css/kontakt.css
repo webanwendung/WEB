@@ -40,7 +40,7 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 }
 
 .styled-input label {
-    color: #999;
+    color:black ;
     padding: 1.3rem 30px 1rem 30px;
     position: absolute;
     top: 10px;
@@ -56,14 +56,14 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
     
 }
 
-input,
+ input,
 textarea {
     padding: 30px;
     border: 0;
     width: 100%;
-    font-size: 1rem;
+    font-size: 24px;
     background-color:#8b8b8b 100000px transparent;
-     opacity: 0.2;
+     opacity: 0.5;
     color: black;
     border-radius: 4px;
     border-bottom:2px solid transparent;
@@ -132,3 +132,21 @@ input[type=checkbox]:checked + label {
   font-style: normal;
 }
 #success_message{ display: none;}
+
+/* for show all kontakt */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+

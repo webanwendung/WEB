@@ -4,6 +4,7 @@
 
 <html>
 <head>
+<title>About us</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/abautus.css">
 </head>
@@ -42,7 +43,7 @@
         <p>ich werde hier eien becshreibende text uber sie später schreiben</p>
         <p>morelle@example.com</p>
         <p>
-           <a class="button" href="mailto:ornelladougou@gmail.com?cc=studcom.support@gmail.com  &bcc=ftsidie@gmail.com&subject=Mail from Studcom&body=Dear Ornella, ...">contact</a>
+           <a class="button" href="mailto:ornelladougou@gmail.com?cc=studcomsuport@gmail.com  &bcc=ftsidie@gmail.com&subject=Mail from Studcom&body=Dear Ornella, ...">contact</a>
 		</p>
       </div>
     </div>
@@ -57,7 +58,7 @@
         <p>lorem ipsum ipsum lorem. Some text that describes this :) Lady</p>
         <p>sarah@example.com</p>
         <p>
-          <a class="button"  href="mailto:sarahkouakou@gmail.com?cc=studcom.support@gmail.com  &bcc=ftsidie@gmail.com&subject=Mail from studcom&body=Dear sahra, ...">contact</a>
+          <a class="button"  href="mailto:sarahkouakou@gmail.com?cc=studcomsuport@gmail.com  &bcc=ftsidie@gmail.com&subject=Mail from studcom&body=Dear sahra, ...">contact</a>
 		</p>
       </div>
     </div>
@@ -72,7 +73,7 @@
         <p>Some text that describes me blaaablaaaaaaa und vieles mehrrr lorem ipsum ipsum lorem.</p>
         <p>frank@example.com</p>
         <p>
-         <a  class="button" href="mailto:franktsidie@gmail.com?cc=studcom.support@gmail.com &bcc=ftsidie@gmail.com&subject=Mail from our Website studcom&body=Dear Frank, ...">contact</a>
+         <a  class="button" href="mailto:franktsidie@gmail.com?cc=studcomsuport@gmail.com &bcc=ftsidie@gmail.com&subject=Mail from our Website studcom&body=Dear Frank, ...">contact</a>
 		</p>
       </div>
     </div>

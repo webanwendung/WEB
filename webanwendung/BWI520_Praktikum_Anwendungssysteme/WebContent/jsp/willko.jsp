@@ -38,16 +38,24 @@
 			</p>
 
 
-			<input class="cn" type="submit" name="kurse"
-				value="zu den Lernunterlagen"><br>
-			<br> <input type="submit" name="dok" value="Notizen hochladen"
-				class="cn"> <input type="submit" name="forum"
-				value="eine Frage im Forum stellen" class="cn"><br>
-			<br> <input type="submit" name="tuf" value="Tutor finden"
-				class="cn"> <input type="submit" name="tuw"
-				value="Tutor werden" class="cn"><br>
+			
+			<!-- zum verwaltung von tutor #botton -->
+			<jsp:getProperty property="admin" name="loginBean"/>
+			<input type="submit" name="forum" value="eine Frage im Forum stellen" class="cn">
 			<br>
-
+			<br><input class="cn" type="submit" name="kurse"value="zu den Lernunterlagen">
+				<input type="submit" name="dok" value="Notizen hochladen"	class="cn"> 
+				
+				
+			<br>
+			<br> 
+			<input type="submit" name="tuf" value="Tutor finden" class="cn"> 
+			<input type="submit" name="tuw" value="Tutor werden" class="cn">
+				
+			<br>
+			<br>
+			 
+				
 
 
 

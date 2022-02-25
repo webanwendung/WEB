@@ -1,0 +1,85 @@
+<%@page import="de.hwg_lu.bw4s.beansPruefung.LoginBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.AccountBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.ForumBean"%>
+<%@page import="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="de.hwg_lu.bw.jdbc.NoConnectionException"%>
+<%@ page import="java.util.*" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html >
+<html> 
+  <head> 
+
+    <title>Forum topic</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="stylesheet" href="../css/Navigation.css">
+	<link rel="stylesheet" href="../css/forum.css">
+	
+
+
+  </head> 
+
+  <body> 
+<jsp:useBean id="accountBean" class="de.hwg_lu.bw4s.beansPruefung.AccountBean" scope="session" />
+<jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
+<jsp:useBean id="htmlexprexion" class="de.hwg_lu.bw4s.beansPruefung.HtmlExpresion" scope="session" />
+<jsp:useBean id="forum" class="de.hwg_lu.bw4s.beansPruefung.ForumBean" scope="session" />
+
+  <jsp:getProperty property="navigation" name="htmlexprexion"/>
+         
+            <jsp:getProperty property="currentDate" name="forum"/>
+
+    <div class="top-bar">
+        <h1>
+            STUDCOM.Forum
+        </h1>
+        
+    </div>
+    
+   
+         
+    <div class="forum_main">
+    <table><tr><td><input type="text" name="topic" value=""></td> <td><button>add Topic</button></td><td> <button   > <a href="../jsp/willko.jsp"> zurück </a></button></td></tr></table>
+     
+        
+        <ol>
+        </ol>
+    </div>
+    <script  src="../js/data.js"></script>
+    <script>
+    
+   
+	
+ 
+        console.log(threads);
+        var container = document.querySelector('ol');
+        for (let thread of threads) {
+            var html = `
+            <li class="row">
+                <a href="../html/forumthread.html?${thread.id}">
+                    <h4 class="title">
+                        ${thread.title}
+                    </h4>
+                    <div class="bottom">
+                        <p class="timestamp">
+                        <jsp:getProperty property="currentDate" name="forum"/>
+                        </p>
+                        <p class="comment-count">
+                            ${thread.comments.length} comments
+                        </p>
+                    </div>
+                </a>
+            </li>
+            `
+            container.insertAdjacentHTML('beforeend', html);
+            
+    
+        }
+    </script>
+    
+   
+</body>
+</html>

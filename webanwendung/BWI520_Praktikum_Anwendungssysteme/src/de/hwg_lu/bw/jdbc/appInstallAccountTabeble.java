@@ -27,14 +27,18 @@ public class appInstallAccountTabeble {
 		System.out.println("JDBC-Connection hergestellt");
 	}
 	public void doSomething() throws SQLException, ClassNotFoundException{
+//		dropkontaktTable();
 //		dropAccountTable();
+//		dropTutorTable();
 //		createAccountTable();
+//		createKontaktTable();
+//		createTutorTable();
 //		insertFirstAccount();
 //		insertSecondAccountStatisch();
 //		insertThirdAccountFromVariables();
 //		insertFourthAccountFromVariablesRetro();
 //		insertSeveralAccounts();
-		showAllAccounts();
+//		showAllAccounts();
 		
 	}
 	
@@ -84,6 +88,7 @@ public class appInstallAccountTabeble {
 		String username = "Testuser 4";
 		String email = "t4@abc.de";
 
+		
 		String sql = "INSERT INTO account "
 				+ "(userid, password, active, admin, username, email) "
 				+ "values "
@@ -119,7 +124,7 @@ public class appInstallAccountTabeble {
 	}
 	
 	public void insertSecondAccountStatisch() throws SQLException{
-		String sql = "INSERT INTO account "
+		String sql = "INSERT INTO accounts "
 				+ "(userid, password, active, admin, username, email) "
 				+ "values "
 				+ "('testus2', 'geheim', 'Y', 'N', 'Testuser 2', 't2@abc.de')";
@@ -128,7 +133,7 @@ public class appInstallAccountTabeble {
 		System.out.println("User-Account testus2 erfolgreich inserted");
 	}
 	public void insertFirstAccount() throws SQLException {
-		String sql = "INSERT INTO account "
+		String sql = "INSERT INTO accounts "
 				+ "(userid, password, active, admin, username, email) "
 				+ "values "
 				+ "(?,?,?,?,?,?)";
@@ -145,7 +150,7 @@ public class appInstallAccountTabeble {
 	}
 	
 	public void createAccountTable() throws SQLException {
-		String sql = "CREATE TABLE account ("
+		String sql = "CREATE TABLE accounts ("
 				+ "			userid   CHAR(56)     NOT NULL PRIMARY KEY,"
 				+ "			password CHAR(32)     NOT NULL            ,"
 				+ "			active   CHAR(1)      NOT NULL DEFAULT 'Y',"
@@ -162,11 +167,68 @@ public class appInstallAccountTabeble {
 		prepStat.executeUpdate();
 		System.out.println("Table account erfolgreich angelegt");
 	}
+	public void createKontaktTable() throws SQLException {
+		String sql = "CREATE TABLE kontakt ("
+				+ "			name   CHAR(56)     NOT NULL ,"
+				+ "			telefon VARCHAR(15) NOT NULL            ,"
+				+ "			emailadresse    VARCHAR(256) NOT NULL PRIMARY KEY," 
+				+ "			message    VARCHAR(5000) NOT NULL "
+				+ "			)";
+		System.out.println(sql);
+		
+		// JDBC macht immer 2 Schritte (wenn mann den SQL-Befehl als String schon hat):
+		// erst ein "Statement" - Statement, PreparedStatement
+		// dann execute         - executeUpdate(), executeQuery(), execute()
+		PreparedStatement prepStat = dbConn.prepareStatement(sql);
+		prepStat.executeUpdate();
+		System.out.println("kontakt erfolgreich angelegt");
+	}
+	public void createTutorTable() throws SQLException {
+		String sql = "CREATE TABLE tutor (\r\n"
+				+ "			name   			VARCHAR(56)     NOT NULL,\r\n"
+				+ "			email   		VARCHAR(56)     NOT NULL PRIMARY KEY,\r\n"
+				+ "			wohnort 		varchar(256)    NOT NULL default 'keine Angaben',\r\n"
+				+ "			active   		CHAR(1)      	NOT NULL DEFAULT 'Y',\r\n"
+				+ "			admin    		CHAR(1)      	NOT NULL DEFAULT 'N',\r\n"
+				+ "			studiengang 	VARCHAR(256)    NOT NULL            ,\r\n"
+				+ "			telefon    		VARCHAR(256) 	NOT null,\r\n"
+				+ "			semester   	    VARCHAR(256)	NOT null,\r\n"
+				+ "			alter    		VARCHAR(256) 	NOT null,\r\n"
+				+ "			message    		varchar  		NOT null,\r\n"
+				+ "			foto    		char(56)  		NOT null ,\r\n"
+				+ "			faecher  		varchar(500)   	NOT null,\r\n"
+				+ "			kursort  		varchar(500) 	NOT null,\r\n"
+				+ "			kurstage  		varchar(500) 	not null,\r\n"
+				+ "			niveau  		varchar(500) 	not null\r\n"
+				+ "			);";
+		System.out.println(sql);
+		
+		// JDBC macht immer 2 Schritte (wenn mann den SQL-Befehl als String schon hat):
+		// erst ein "Statement" - Statement, PreparedStatement
+		// dann execute         - executeUpdate(), executeQuery(), execute()
+		PreparedStatement prepStat = dbConn.prepareStatement(sql);
+		prepStat.executeUpdate();
+		System.out.println("kontakt erfolgreich angelegt");
+	}
+	
+	
 	public void dropAccountTable() throws SQLException {
-		String sql = "DROP TABLE IF EXISTS account";
+		String sql = "DROP TABLE IF EXISTS accounts";
 		System.out.println(sql);
 		dbConn.prepareStatement(sql).executeUpdate();
 		System.out.println("Table account existiert (jetzt) nicht (mehr)");
+	}
+	public void dropkontaktTable() throws SQLException {
+		String sql = "DROP TABLE IF EXISTS kontakt";
+		System.out.println(sql);
+		dbConn.prepareStatement(sql).executeUpdate();
+		System.out.println("Table kontakt existiert (jetzt) nicht (mehr)");
+	}
+	public void dropTutorTable() throws SQLException {
+		String sql = "DROP TABLE IF EXISTS tutor";
+		System.out.println(sql);
+		dbConn.prepareStatement(sql).executeUpdate();
+		System.out.println("Table tutor existiert (jetzt) nicht (mehr)");
 	}
 	
 	
@@ -182,7 +244,7 @@ public class appInstallAccountTabeble {
 	
 	public void showAllAccounts() throws SQLException{
 		String sql = "select userid, password, active, admin, username, email " +
-						"from account";
+						"from accounts";
 		System.out.println(sql);
 		Statement stmt = this.dbConn.createStatement();
 		ResultSet dbRes = stmt.executeQuery(sql);
@@ -250,76 +312,9 @@ public class appInstallAccountTabeble {
 		this.dbConn.createStatement().executeUpdate(sql);
 		System.out.println("Zweiter Account angelegt");
 	}
-	public void insertThirdAccountFromVariables1() throws SQLException{
-		String userid = "testus3";
-		String password = "geheim";
-		String active = "Y";
-		String admin = "N";
-		String username = "Testuser 3";
-		String email = "testus3@abc.de";
-		
-		String sql = "insert into bw440_654321.account "
-				+ "(userid, password, active, admin, username, email) "
-				+ "values"
-				+ "(?,?,?,?,?,?)";
-		System.out.println(sql);
-		
-		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-		prep.setString(1, userid);
-		prep.setString(2, password);
-		prep.setString(3, active);
-		prep.setString(4, admin);
-		prep.setString(5, username);
-		prep.setString(6, email);
-		prep.executeUpdate();
-		
-		System.out.println("Dritter Account angelegt");
-	}
-	public void insertFourthAccountFromVariablesRetro1() throws SQLException{
-		String userid = "testus4";
-		String password = "geheim";
-		String active = "Y";
-		String admin = "N";
-		String username = "Testuser 4";
-		String email = "testus4@abc.de";
-		String sql = "insert into bw440_654321.account "
-				+ "(userid, password, active, admin, username, email) "
-				+ "values "
-				+ "('" + userid + "','" + password + "','" + active + "','" + admin + "','" + username + "','" + email + "')"; 
-		System.out.println(sql);
-		this.dbConn.createStatement().executeUpdate(sql);
-		System.out.println("Vierter Account angelegt");
-	}
-	public void insertSeveralAccounts1() throws SQLException{
-		String sql = "insert into bw440_654321.account "
-				+ "(userid, password, active, admin, username, email) "
-				+ "values"
-				+ "(?,?,?,?,?,?)";
-		System.out.println(sql);
-
-		String userid = "testus";
-		String password = "geheim";
-		String active = "Y";
-		String admin = "N";
-		String username = "Testuser ";
-		String email = "testusx@abc.de";
-
-		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-		for (int myNumber = 5; myNumber <= 10; myNumber++){
-			String myNumberString = Integer.toString(myNumber);
-			prep.setString(1, userid + myNumberString);
-			prep.setString(2, password);
-			prep.setString(3, active);
-			prep.setString(4, admin);
-			prep.setString(5, username + myNumberString);
-			prep.setString(6, email.replace("x", myNumberString));
-			prep.executeUpdate();
-			
-			System.out.println("Account testus " + myNumberString + " angelegt");
-
-			
-		}
-	}
+	
+	
+	
 
 }
 

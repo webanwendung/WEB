@@ -12,6 +12,7 @@ public class LoginBean {
 	String userid;
 	String password;
 	boolean isLoggedIn;
+	boolean isAdmin;
 	
 	public LoginBean() {
 		this.userid = "nx";
@@ -19,7 +20,7 @@ public class LoginBean {
 	}
 	
 	public boolean checkUseridPassword() throws SQLException {
-		String sql = "SELECT userid, password from account where userid = ? and password = ?";
+		String sql = "SELECT userid, password from accounts where userid = ? and password = ?";
 		System.out.println(sql);
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
@@ -28,8 +29,9 @@ public class LoginBean {
 		ResultSet dbRes = prep.executeQuery();
 		return dbRes.next();
 	}
+	
 	public boolean checkUseridPassword2() throws SQLException {
-		String sql = "SELECT userid, password from account where userid = ?";
+		String sql = "SELECT userid, password from accounts where userid = ?";
 		System.out.println(sql);
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
@@ -47,9 +49,10 @@ public class LoginBean {
 	}
 	
 	public String getLoginauftrag() {//wenn man eingelogt ist verschwindet diese
-		String html = getUserid();
+		String userId = getUserid();
+		String html="";
 		System.out.println(html);
-		if (html=="nx") {
+		if (userId=="nx") {
 			html="<div class='form'>";
 					html+="<h2>Haben sie bereit einen Account?</h2>'";
 					html+="<button class='btnn'><a href='../jsp/regundlog.jsp'>Login</a></button><br><br>";
@@ -59,6 +62,21 @@ public class LoginBean {
 		
 		return html;
 		}
+	public String getAdmin() throws SQLException {//wenn man eingelogt ist und admin dann kann man tutoren verwalten
+		String sql = "SELECT userid, password from accounts where userid = ? and password = ? and admin= ?";
+		System.out.println(sql);
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		prep.setString(1, this.userid);
+		prep.setString(2, this.password);
+		prep.setString(3, "Y");
+		ResultSet dbRes = prep.executeQuery();
+		boolean admin= dbRes.next();
+		if (admin) {
+			return "<input class=\"cn\" type=\"submit\" name=\"saa\"value=\"Account Verwaltung\"> <input class=\"cn\" type=\"submit\" name=\"sat\"value=\"Tutor Verwaltung\">  <br> <br> <input class=\"cn\" type=\"submit\" name=\"kontakt\"value=\"Narichten Verwaltung\">  ";
+		}
+		return "";
+	}
 
 	public String getUserid() {
 		return userid;

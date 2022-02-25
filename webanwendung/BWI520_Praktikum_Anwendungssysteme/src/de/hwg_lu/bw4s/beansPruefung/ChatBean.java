@@ -8,7 +8,7 @@ import de.hwg_lu.bw.jdbc.PostgreSQLAccess;
 
 public class ChatBean {
 	HashMap<String , String>speicher;
-	String userid;
+	String name;
 	String nachricht;
 	String html="";
 
@@ -18,7 +18,7 @@ public class ChatBean {
 	}
 	
 	public String getUserid() {
-		 return "Hallo "+ userid +", möchtest Du was sagen?";
+		 return "Hallo "+ name +", möchtest Du was sagen?";
 	 }
 	 
   public void writeToDB() throws  SQLException {
@@ -38,7 +38,7 @@ public class ChatBean {
 }
   
   public void addNachricht() {
-		this.speicher.put(this.userid,this.nachricht);
+		this.speicher.put(this.name,this.nachricht);
 	}
   public void loescheAlles() {
 		this.speicher.clear();
@@ -54,7 +54,7 @@ public void setNachricht(String nachricht) {
 }
 
 public void setUserid(String userid) {
-	this.userid = userid;
+	this.name = userid;
 }
   
   
