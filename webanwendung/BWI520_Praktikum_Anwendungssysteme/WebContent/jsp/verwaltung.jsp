@@ -25,6 +25,7 @@
 <jsp:useBean id="loginBean" class="de.hwg_lu.bw4s.beansPruefung.LoginBean" scope="session" />
 <jsp:useBean id="tutorBean" class="de.hwg_lu.bw4s.beansPruefung.Tutorbeans" scope="session" />
 <jsp:useBean id="kontaktBean" class="de.hwg_lu.bw4s.beansPruefung.KontakBean" scope="session" />
+<jsp:useBean id="saab" class="de.hwg_lu.bw4s.beansPruefung.ShowAllAccountsBean" scope="session" />
 
 <%!
 public String denullify(String inputString){
@@ -40,12 +41,14 @@ public String[] denullify(String[] inputStringArray){
 
 String keyEmail = request.getParameter("loeschen");
 String key = request.getParameter("loeschenk");
+String accountId = request.getParameter("loeschenA");
 
 
 
 //Buttons
 String loeschen = this.denullify(request.getParameter("loeschen"));
 String loeschenk = this.denullify(request.getParameter("loeschenk"));
+String loeschenA = this.denullify(request.getParameter("loeschenA"));
 
 if (loeschen.equals(keyEmail)){
 	System.out.println("tutor" + keyEmail+" -Button wurde gelöcht");
@@ -58,9 +61,15 @@ if (loeschen.equals(keyEmail)){
 else if (loeschenk.equals(key)){
 	System.out.println("kontakt von " + key+" -Button wurde gelöcht");
 
-		kontaktBean.deletenachticht(key);
-	
+		kontaktBean.deletenachticht(key);	
 		response.sendRedirect("../jsp/showAllkontakt.jsp");
+	   
+	   }
+else if (loeschenA.equals(accountId)){
+	System.out.println("account von " + accountId+" - wurde gelöcht");
+
+		saab.deleteAccount(accountId);
+		response.sendRedirect("../jsp/showAllaccount.jsp");
 	   
 	   }
 else {

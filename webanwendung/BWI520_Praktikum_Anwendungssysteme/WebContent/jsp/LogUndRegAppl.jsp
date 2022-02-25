@@ -76,7 +76,7 @@ else if (passwortBestaetigen.equals("passwort Bestaetigen")){
 	{
 		accountBean.setAccoutcheck(true);
 		accountBean.setUpdatePasswordforgot(pass1);
-		accountBean.setUpdat("<br> <br> Ihr Passwort wurde erfolgreich aktualisiert, bitte einloggen");
+		accountBean.setUpdat("<br> <br><br> Ihr Passwort wurde erfolgreich aktualisiert <br><br> bitte einloggen");
 	}
 	response.sendRedirect("./regundlog.jsp");
 }
